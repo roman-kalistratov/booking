@@ -1,0 +1,9 @@
+@import './scss/vars';
+@import './scss/reset';
+@import './scss/mixins';
+@import './scss/global';
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
