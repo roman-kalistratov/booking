@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+    background-color:$bg-color;
+    color:$white-color;
 
     &__copyright {        
         display: flex;

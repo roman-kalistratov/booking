@@ -7,6 +7,7 @@ import Divider from './Divider/Divider';
 import WhyRTours from './WhyRTours/WhyRTours';
 import Destinations from './Destinations/Destinations';
 import Adventures from './Adventures/Adventures';
+import Subscribe from './Subscribe/Subscribe';
 
 
 export {
@@ -18,5 +19,6 @@ export {
     Divider,
     WhyRTours,
     Destinations,
-    Adventures
+    Adventures,
+    Subscribe
   };
