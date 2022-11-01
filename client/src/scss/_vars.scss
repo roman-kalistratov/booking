@@ -1,12 +1,25 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+$nav-height: 6rem;
 
 /*========== Colors ==========*/
-
-
+$primary-color: #555;
+$secondary-color: #cecece;
+$black-color:#070A10;
+$white-color:#fff;
+$bg-color:#070A10;
 
 /*========== Font and typography ==========*/
 /*.5rem = 5px | 1rem = 10px ...*/
+$primary-font: 'Lato', sans-serif;
+$thith-font:'Alef', sans-serif;
 
+$normal-font-size: 1.6rem;
 
+$h1-font-size: 5.2rem;
+$h2-font-size: 2.4rem;
+$h3-font-size: 1.8rem;
+$h4-font-size: 1.2rem;
 
 /*========== Font weight ==========*/

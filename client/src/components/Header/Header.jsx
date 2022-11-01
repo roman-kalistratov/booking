@@ -1,10 +1,12 @@
 import React from 'react';
+import Slider from '../Slider/Slider';
+
 import './header.scss';
 
 const Header = () => {
   return (
     <header className='header' id='home'> 
-        header
+       <Slider.HeaderSlider/>
      </header>
   )
 }

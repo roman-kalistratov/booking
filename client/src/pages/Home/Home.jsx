@@ -1,14 +1,19 @@
 import React from 'react';
-import { Header, Footer } from '../../components';
+import { Footer, Header, Navbar } from '../../components';
 
 import './home.scss';
 
 const Home = () => {
   return (
     <>
+      <Navbar />
       <Header />
       <div class="wrapper">
-        <main class="main">main</main>
+        <main class="main">
+          home main
+
+
+        </main>
         <Footer />
       </div>
     </>
