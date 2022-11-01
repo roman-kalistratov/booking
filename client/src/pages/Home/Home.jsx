@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Header, Navbar, TopTours } from '../../components';
+import { Footer, Header, Navbar, TopTours, WhyRTours, Destinations } from '../../components';
 
 import './home.scss';
 
@@ -10,7 +10,9 @@ const Home = () => {
       <Header />
       <div class="wrapper">
         <main class="main">
-          <TopTours/>
+          <TopTours />
+          <WhyRTours />
+          <Destinations />
 
 
         </main>

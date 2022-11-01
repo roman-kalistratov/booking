@@ -1,0 +1,52 @@
+@import '../../scss/vars';
+
+.destinations {   
+    width: 100%;        
+    
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-self: center;
+    }
+    .destinationItem {        
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+        position: relative;
+        color: $white-color;
+        overflow: hidden;
+    
+        &__img {
+            width: 250px;
+            height: 180px;
+            border-radius: 0.8rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            transition: .3s ease-in-out;
+          
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    
+        &__info {
+            text-align: left;
+            position: absolute;
+            bottom: 8%;
+            left: 8%;
+        }
+    
+        &__title {
+            font-size: calc($h2-font-size * 0.8);
+        }
+    
+        &__subtitle {
+            color:$light-color;
+            font-weight: 400;
+            font-size: calc($h3-font-size * 0.7);
+            letter-spacing: 1px;
+        }
+    }
+
+}

@@ -1,0 +1,42 @@
+@import '../../scss/vars';
+
+.whyRTours {
+    background-color: $light-color;
+    background-color: #EFF6F6;
+    padding: 2rem 0 3rem 0;
+
+    &__wrapper {
+        margin-top: 4rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex-basis: 25%;
+       
+
+        &-icon {
+            width: 50px;
+            height: 50px;
+            // fill: $primary-color;
+            &:last-child {
+                fill: red;
+            }
+        }
+
+        
+
+        &-title {
+            color: $black-color;
+            margin-top: 1rem;
+        }
+
+        &-text {
+            line-height: 2.2rem;
+            max-width: 90%;
+            margin: 1rem auto;
+        }
+    }
+
+}

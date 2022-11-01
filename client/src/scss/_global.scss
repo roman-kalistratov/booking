@@ -23,6 +23,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: $primary-font;
     font-size: $normal-font-size;
+    text-align: center;
 }
 
 .container {
@@ -57,7 +58,6 @@ h2 {
     font-family: $secondary-font;
     font-weight: 400;
     letter-spacing: 1px;
-
 }
 
 h3 {
@@ -74,7 +74,7 @@ h4 {
 
 p {
     color: $secondary-color;
-    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .btn {
