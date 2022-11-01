@@ -6,6 +6,7 @@ import TopTours from './TopTours/TopTours';
 import Divider from './Divider/Divider';
 import WhyRTours from './WhyRTours/WhyRTours';
 import Destinations from './Destinations/Destinations';
+import Adventures from './Adventures/Adventures';
 
 
 export {
@@ -16,5 +17,6 @@ export {
     TopTours,
     Divider,
     WhyRTours,
-    Destinations
+    Destinations,
+    Adventures
   };
