@@ -1,5 +1,6 @@
 @import '../../scss/vars';
 
+/*========== Base Settings ==========*/
 .swiper {
     width: 100%;
     height: 100%;
@@ -8,8 +9,6 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    // background: #fff;
-
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -31,61 +30,12 @@
     object-fit: cover;
 }
 
-body {
-    // background: #000;
-    // color: #000;
-}
-
-.swiper {
-    width: 100%;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-slide {
-    background-size: cover;
-    background-position: center;
-}
-
-.mySwiper2 {
-    height: 100%;
-    width: 100%;   
-}
-
-.mySwiper {
-    height: 20%;
-    width: 80%;
-    border-radius: 2rem;
-    padding: 1rem;
-    top: -25vh;
-    background-color: white;
-    -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
-    box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.67);
-
-}
-
-.mySwiper .swiper-slide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-    cursor: pointer;
-    border-radius: 2rem;
-
-    &:hover {
-        -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
-        box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.67);
-        opacity: 1;
-    }
-}
-
-.mySwiper .swiper-slide img {
-    border-radius: 2rem;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-}
+// .swiper {
+//     width: 100%;
+//     height: 400px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
 .swiper-slide img {
     display: block;
@@ -116,5 +66,110 @@ body {
 
     &:hover:after {
         opacity: 1;
+    }
+}
+
+
+/*========== Header Slider ==========*/
+
+.headerSlider {
+    height: 100%;
+    width: 100%;
+}
+
+.headerSlider-thumbs {
+    height: 20%;
+    width: 80%;
+    border-radius: 2rem;
+    padding: 1rem;
+    top: -25vh;
+    background-color: white;
+    -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
+    box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.67);
+
+}
+
+.headerSlider-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    cursor: pointer;
+    border-radius: 2rem;
+
+    &:hover {
+        -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
+        box-shadow: 0px 7px 7px -3px rgba(0, 0, 0, 0.67);
+        opacity: 1;
+    }
+}
+
+.headerSlider-thumbs .swiper-slide img {
+    border-radius: 2rem;
+}
+
+.headerSlider-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+/*========== Top Tours ==========*/
+
+.topToursSlider .swiper-slide {
+    width: 25%;
+    height: 100%;
+}
+
+.toursItem {
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $white-color;
+    transition: .2s ease;
+
+    &:hover {
+        -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
+        box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
+    }
+
+    &__img {       
+        height: 180px;
+        border-top-left-radius: 0.8rem;
+        border-top-right-radius: 0.8rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title,
+    &__subtitle {
+        text-align: left;
+    }
+
+    &__title {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+    }
+
+    &__subtitle {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        color: $primary-color;
+        font-weight: 300;
+    }
+
+    &__inner {
+        padding: 0 1rem;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    &__btn {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }

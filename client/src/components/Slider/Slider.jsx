@@ -15,7 +15,7 @@ const HeaderSlider = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <>
-            <Swiper               
+            <Swiper
                 speed={700}
                 loop={true}
                 effect={'fade'}
@@ -27,49 +27,49 @@ const HeaderSlider = () => {
                 }}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, EffectFade, Thumbs]}
-                className="mySwiper2"
+                className="headerSlider"
             >
-               <SwiperSlide>
+                <SwiperSlide>
                     <img src={images.slide1} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide2} alt="slide"/>
+                    <img src={images.slide2} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide3} alt="slide"/>
+                    <img src={images.slide3} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide4} alt="slide"/>
+                    <img src={images.slide4} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide5} alt="slide"/>
+                    <img src={images.slide5} alt="slide" />
                 </SwiperSlide>
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
-                speed={700}                
+                speed={700}
                 spaceBetween={10}
                 slidesPerView={5}
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper"
+                className="headerSlider-thumbs"
             >
                 <SwiperSlide>
-                    <img src={images.slide1} alt="slide"/>
+                    <img src={images.slide1} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide2} alt="slide"/>
+                    <img src={images.slide2} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide3} alt="slide"/>
+                    <img src={images.slide3} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide4} alt="slide"/>
+                    <img src={images.slide4} alt="slide" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={images.slide5} alt="slide"/>
+                    <img src={images.slide5} alt="slide" />
                 </SwiperSlide>
             </Swiper>
         </>
@@ -78,16 +78,111 @@ const HeaderSlider = () => {
 
 
 
-
-
-
-
-
-const Slider2 = () => {
+const TopToursSlider = () => {
     return (
-        <div>Slider2</div>
+        <>
+            <Swiper
+                speed={700}
+                dir="rtl"
+                centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 4500,
+                    disableOnInteraction: false,
+                }}
+                spaceBetween={10}
+                slidesPerView={4}
+                navigation={true}
+                modules={[Navigation]}
+                className="topToursSlider"
+            >
+                <SwiperSlide>
+                    <div className='toursItem'>
+                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
+                        <div className="toursItem__inner">
+                            <h2 className='toursItem__title'>Madrid</h2>
+                            <p className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</p>
+
+                            <div className="toursItem__info">
+                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
+                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                            </div>
+
+                            <button className='toursItem__btn' type="button">View Details</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='toursItem'>
+                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
+                        <div className="toursItem__inner">
+                            <h2 className='toursItem__title'>Madrid</h2>
+                            <p className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</p>
+
+                            <div className="toursItem__info">
+                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
+                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                            </div>
+
+                            <button className='toursItem__btn' type="button">View Details</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='toursItem'>
+                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
+                        <div className="toursItem__inner">
+                            <h2 className='toursItem__title'>Madrid</h2>
+                            <p className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</p>
+
+                            <div className="toursItem__info">
+                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
+                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                            </div>
+
+                            <button className='toursItem__btn' type="button">View Details</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='toursItem'>
+                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
+                        <div className="toursItem__inner">
+                            <h2 className='toursItem__title'>Madrid</h2>
+                            <p className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</p>
+
+                            <div className="toursItem__info">
+                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
+                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                            </div>
+
+                            <button className='toursItem__btn' type="button">View Details</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='toursItem'>
+                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
+                        <div className="toursItem__inner">
+                            <h2 className='toursItem__title'>Madrid</h2>
+                            <p className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</p>
+
+                            <div className="toursItem__info">
+                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
+                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                            </div>
+
+                            <button className='toursItem__btn' type="button">View Details</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                
+
+
+            </Swiper>
+        </>
     )
 }
 
-export default { HeaderSlider, Slider2 }
+export default { HeaderSlider, TopToursSlider }
 
