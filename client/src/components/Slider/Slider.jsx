@@ -15,7 +15,11 @@ const HeaderSlider = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <>
+<<<<<<< HEAD
             <Swiper
+=======
+            <Swiper               
+>>>>>>> 2031566a291b7639509660793bfa653db95be360
                 speed={700}
                 loop={true}
                 effect={'fade'}
@@ -27,6 +31,7 @@ const HeaderSlider = () => {
                 }}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, EffectFade, Thumbs]}
+<<<<<<< HEAD
                 className="headerSlider"
             >
                 <SwiperSlide>
@@ -43,17 +48,40 @@ const HeaderSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={images.slide5} alt="slide" />
+=======
+                className="mySwiper2"
+            >
+               <SwiperSlide>
+                    <img src={images.slide1} alt="slide" />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide2} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide3} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide4} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide5} alt="slide"/>
+>>>>>>> 2031566a291b7639509660793bfa653db95be360
                 </SwiperSlide>
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
+<<<<<<< HEAD
                 speed={700}
+=======
+                speed={700}                
+>>>>>>> 2031566a291b7639509660793bfa653db95be360
                 spaceBetween={10}
                 slidesPerView={5}
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
+<<<<<<< HEAD
                 className="headerSlider-thumbs"
             >
                 <SwiperSlide>
@@ -70,6 +98,24 @@ const HeaderSlider = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={images.slide5} alt="slide" />
+=======
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <img src={images.slide1} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide2} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide3} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide4} alt="slide"/>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img src={images.slide5} alt="slide"/>
+>>>>>>> 2031566a291b7639509660793bfa653db95be360
                 </SwiperSlide>
             </Swiper>
         </>
@@ -78,6 +124,7 @@ const HeaderSlider = () => {
 
 
 
+<<<<<<< HEAD
 const TopToursSlider = () => {
     return (
         <>
@@ -185,4 +232,18 @@ const TopToursSlider = () => {
 }
 
 export default { HeaderSlider, TopToursSlider }
+=======
+
+
+
+
+
+const Slider2 = () => {
+    return (
+        <div>Slider2</div>
+    )
+}
+
+export default { HeaderSlider, Slider2 }
+>>>>>>> 2031566a291b7639509660793bfa653db95be360
 
