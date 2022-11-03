@@ -28,9 +28,9 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar__wrapper">
                 <ul className='navbar__list'>
-                    {['Home', 'Destinations', 'Tours', 'Contact'].map((item) =>
+                    {['home', 'destinations', 'tours', 'contact'].map((item) =>
                         <li key={item} className={`navbar__item ${isActive === item ? "active" : ''}`} onClick={() => setIsActive(item)}>
-                            <Link to="/" className="navbar__link">{item}</Link>
+                            <Link to={`/${item !== 'home' ? item : ''}`} className="navbar__link">{item}</Link>
                         </li>
                     )}
                 </ul>

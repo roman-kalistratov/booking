@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, Navbar } from '../../components';
+import { Footer, Navbar,Filters,ScrollToTop } from '../../components';
 import './destinations.scss';
 
 const Destinations = () => {
@@ -9,12 +9,16 @@ const Destinations = () => {
      
       <div class="wrapper">
         <main class="main">
-          destinations main
+          <div className="main__container container">
+                <div className="main__left"><Filters/></div>
+                <div className="main__right">fasfa</div>
+          </div>
 
 
         </main>
         <Footer />
       </div>
+      <ScrollToTop/>
     </>
   )
 }

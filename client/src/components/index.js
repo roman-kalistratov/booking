@@ -8,6 +8,8 @@ import WhyRTours from './WhyRTours/WhyRTours';
 import Destinations from './Destinations/Destinations';
 import Adventures from './Adventures/Adventures';
 import Subscribe from './Subscribe/Subscribe';
+import Filters from './Filters/Filters';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
 
 
 export {
@@ -20,5 +22,7 @@ export {
     WhyRTours,
     Destinations,
     Adventures,
-    Subscribe
+    Subscribe,
+    Filters,
+    ScrollToTop
   };

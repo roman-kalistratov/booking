@@ -56,6 +56,7 @@
 
     &__item {
         position: relative;
+        text-transform:capitalize;
 
         &:not(.active):after,
         &:not(.active):before,
