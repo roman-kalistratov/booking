@@ -14,21 +14,12 @@ const Adventures = () => {
             <Divider />
             <div className="adventures__tabs">
                 <ul className="adventures__btns">
-                    <li className={`adventures__btns-item ${tabActive === "Hiking & Trekking" ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
-                        Hiking & Trekking
-                    </li>
-                    <li className={`adventures__btns-item ${tabActive === "River Cruises" ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
-                        River Cruises
-                    </li>
-                    <li className={`adventures__btns-item ${tabActive === "Safari" ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
-                        Safari
-                    </li>
-                    <li className={`adventures__btns-item ${tabActive === "Explore Europe" ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
-                        Explore Europe
-                    </li>
-                    <li className={`adventures__btns-item ${tabActive === "Popular Adventure" ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
-                        Popular Adventure
-                    </li>
+                    {
+                        ['Hiking & Trekking', 'River Cruises', 'Safari', 'Explore Europe', 'Popular Adventure'].map((item) => 
+                            <li key={item} className={`adventures__btns-item ${tabActive === item ? "active" : ""}`} onClick={(e) => (setTabActive(e.target.textContent))}>
+                                {item}
+                            </li>
+                        )}                   
                 </ul>
 
                 <ul className="adventures__content">

@@ -8,17 +8,19 @@
     align-items: center;
     position: fixed;
     z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.4);   
+    background-color: rgba(0, 0, 0, 0.6);
     font-family: $primary-font;
     color: $white-color;
+    transition: height .3s ease-in-out;
+
 
     &__link {
-        color:inherit;
-        font-size: $normal-font-size;        
+        color: inherit;
+        font-size: $normal-font-size;
         letter-spacing: 0.2rem;
         font-weight: 300;
         display: flex;
-        align-items:center;
+        align-items: center;
     }
 
     &__logo {
@@ -32,14 +34,15 @@
         background-color: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         padding: 0.7rem;
+        transition: all .4s ease-in-out;
     }
 
     &__user-icon {
         margin-right: 1rem;
-        border:1px solid $white-color;
+        border: 1px solid $white-color;
         padding: 0.3rem;
         font-size: 2.5rem;
-        border-radius:50%;
+        border-radius: 50%;
     }
 
     &__list {
@@ -54,8 +57,10 @@
     &__item {
         position: relative;
 
-        &:after,
-        &:before {
+        &:not(.active):after,
+        &:not(.active):before,
+        &.active:before,
+        &.active:after {
             content: '';
             position: absolute;
             top: 130%;
@@ -74,10 +79,27 @@
         }
 
         &:hover {
+
             &:after,
             &:before {
                 width: 50%;
             }
+        }
+
+        &.active:before,
+        &.active:after {
+            width: 50%;
+        }
+    }
+
+    &.sticky {
+        height: calc($nav-height * 0.8);
+        background-color: rgba(0, 0, 0, 0.4);
+
+        .navbar__logo {
+            max-width: 70px;
+            padding: 0.5rem;
+            margin-top: 2rem;
         }
     }
 }

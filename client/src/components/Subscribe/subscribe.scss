@@ -23,15 +23,17 @@
         background-color:$white-color;
         border:none;
         outline: none;
-        font-size: 2.4rem;border-radius: 0.4rem;
+        font-size: 2.4rem;
+        border-radius: 0.4rem;
         padding: 0.5rem 1.2rem;
         margin: 2rem 2rem 1rem 0;
 
 
     }
 
-    &__submit {
-        font-size: 2.4rem;
-        
-    }
+    & button {
+        color:$white-color;
+        font-size: 2rem;
+        font-weight: 300;        
+    } 
 }

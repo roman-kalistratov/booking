@@ -31,10 +31,9 @@ const Subscribe = () => {
       <form className='subscribe__form' onSubmit={handleSubmit(onSubmit)}>
         <label className='subscribe__label'>        
           <input className='subscribe__input' type="email" placeholder=' Your email' {...register("email")} />
-          <span className='subscribe__error'>{errors.email?.message}</span>
           <button className='subscribe__submit btn'>Subscribe</button>
         </label>
-
+        <span className='subscribe__error'>{errors.email?.message}</span>
       </form>
     </div>
   )

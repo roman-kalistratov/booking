@@ -13,6 +13,7 @@ import './slider.scss';
 
 const HeaderSlider = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
     return (
         <>
             <Swiper
@@ -21,30 +22,27 @@ const HeaderSlider = () => {
                 effect={'fade'}
                 centeredSlides={true}
                 navigation={true}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: true,
-                }}
+                // autoplay={{
+                //     delay: 5000,
+                //     disableOnInteraction: true,
+                // }}
                 thumbs={{ swiper: thumbsSwiper }}
-                modules={[FreeMode, Navigation, EffectFade, Thumbs]}
-                className="headerSlider"
-            >
-                <SwiperSlide>
-                    <img src={images.slide1} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide2} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide3} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide4} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide5} alt="slide" />
-                </SwiperSlide>
+                modules={[Autoplay, FreeMode, Navigation, EffectFade, Thumbs]}
+                className="headerSlider">
+
+                {headerSliderData.map((slide) =>
+                    <SwiperSlide key={slide.title}>
+                        <img src={slide.img} alt={`slide img ${slide.title}`} />
+                        <h1 className="slide-title">
+                            {slide.title}
+                        </h1>
+                        <h2 className="slide-subtitle">
+                            {slide.category}
+                        </h2>
+                    </SwiperSlide>
+                )}
             </Swiper>
+
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
@@ -54,23 +52,14 @@ const HeaderSlider = () => {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="headerSlider-thumbs"
-            >
-                <SwiperSlide>
-                    <img src={images.slide1} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide2} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide3} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide4} alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={images.slide5} alt="slide" />
-                </SwiperSlide>
+                className="headerSlider-thumbs">
+
+                {
+                    headerSliderData.map((slide) =>
+                        <SwiperSlide key={slide}>
+                            <img src={slide.img} alt="slide" />
+                        </SwiperSlide>
+                    )}
             </Swiper>
         </>
     )
@@ -82,7 +71,7 @@ const TopToursSlider = () => {
     return (
         <>
             <Swiper
-                speed={1000}                
+                speed={1000}
                 loop={true}
                 // autoplay={{
                 //     delay: 4500,
@@ -91,97 +80,107 @@ const TopToursSlider = () => {
                 freeMode={true}
                 spaceBetween={30}
                 slidesPerView={4}
-                modules={[Autoplay,FreeMode]}  
-                className="topToursSlider"
-            >
-                <SwiperSlide>
-                    <div className='toursItem'>
-                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
-                        <div className="toursItem__inner">
-                            <h2 className='toursItem__title'>Madrid</h2>
-                            <h4 className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</h4>
+                modules={[Autoplay, FreeMode]}
+                className="topToursSlider">               
 
-                            <div className="toursItem__info">
-                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
-                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
+                {toursSliderData.map((tour) => 
+                        
+                        <SwiperSlide key={tour.title}>
+                        <div className='toursItem'>
+                        
+                            <div className="toursItem__img" style={{ backgroundImage: `url(${tour.img})` }}></div>
+                            <div className="toursItem__inner">
+                                <h2 className='toursItem__title'>{tour.title}</h2>
+                                <h4 className="toursItem__subtitle">{tour.subtitle}</h4>
+    
+                                <div className="toursItem__info">
+                                    <h4 className='toursItem__info-days'>{tour.days}</h4>
+                                    <h3 className='toursItem__info-price'>from <span>{tour.price}$</span></h3>
+                                </div>
+    
+                                <button className='toursItem__btn btn' type="button">View Details</button>
                             </div>
-
-                            <button className='toursItem__btn btn' type="button">View Details</button>
                         </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='toursItem'>
-                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
-                        <div className="toursItem__inner">
-                            <h2 className='toursItem__title'>Madrid</h2>
-                            <h4 className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</h4>
-
-                            <div className="toursItem__info">
-                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
-                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
-                            </div>
-
-                            <button className='toursItem__btn btn' type="button">View Details</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='toursItem'>
-                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
-                        <div className="toursItem__inner">
-                            <h2 className='toursItem__title'>Madrid</h2>
-                            <h4 className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</h4>
-
-                            <div className="toursItem__info">
-                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
-                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
-                            </div>
-
-                            <button className='toursItem__btn btn' type="button">View Details</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='toursItem'>
-                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
-                        <div className="toursItem__inner">
-                            <h2 className='toursItem__title'>Madrid</h2>
-                            <h4 className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</h4>
-
-                            <div className="toursItem__info">
-                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
-                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
-                            </div>
-
-                            <button className='toursItem__btn btn' type="button">View Details</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='toursItem'>
-                        <div className="toursItem__img" style={{ backgroundImage: `url(${images.slide4})` }}></div>
-                        <div className="toursItem__inner">
-                            <h2 className='toursItem__title'>Madrid</h2>
-                            <h4 className="toursItem__subtitle">A ticket to experience the best of one or two Disney® theme parks in Paris</h4>
-
-                            <div className="toursItem__info">
-                                <h4 className='toursItem__info-days'>7 DAYS 6 NIGHTS</h4>
-                                <h3 className='toursItem__info-price'>from <span>100$</span></h3>
-                            </div>
-
-                            <button className='toursItem__btn btn' type="button">View Details</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                
-                
-
-
+                    </SwiperSlide>
+                )}
             </Swiper>
         </>
     )
 }
 
+
 export default { HeaderSlider, TopToursSlider }
 
+/*======= section data ======= */
+const headerSliderData = [
+    {
+        title: "switzerland",
+        category: "Top Destination",
+        img: images.slide4
+    },
+    {
+        title: "dubai",
+        category: "Top Destination",
+        img: images.slide2
+    },
+    {
+        title: "amsterdam",
+        category: "Top Destination",
+        img: images.slide3
+    },
+    {
+        title: "maldives",
+        category: "Top Destination",
+        img: images.slide1
+    },
+    {
+        title: "vienna",
+        category: "Top Destination",
+        img: images.slide5
+    }
+];
+
+const toursSliderData = [
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    },
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    },
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    },
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    },
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    },
+    {
+        img: images.slide4,
+        title: "Madrid",
+        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
+        days: "7 DAYS 6 NIGHTS",
+        price: "100"
+    }
+]

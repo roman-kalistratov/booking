@@ -3,45 +3,62 @@
 .destinations {   
     width: 100%;        
     
-    &__items {
+    &__wrapper{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         align-self: center;
     }
-    .destinationItem {        
+
+    &__item {
         margin-bottom: 3rem;
         border-radius: 1rem;
         position: relative;
         color: $white-color;
         overflow: hidden;
-    
-        &__img {
+
+        &:hover {
+            .destinations__item-title,
+            .destinations__item-subtitle,
+            .destinations__item-img{                
+                transition:transform .5s ease-in-out;
+            }
+
+            .destinations__item-title {
+                transform: translateX(-100%);
+            }
+
+            .destinations__item-subtitle {
+                transform: translateX(200%);
+            }
+
+            .destinations__item-img {
+                transform: scale(1.2);
+            }
+        }
+
+        &-img {
             width: 250px;
             height: 180px;
             border-radius: 0.8rem;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            transition: .3s ease-in-out;
-          
-            &:hover {
-                transform: scale(1.2);
-            }
+            transition: .3s ease-in-out; 
         }
     
-        &__info {
+        &-info {
             text-align: left;
             position: absolute;
             bottom: 8%;
             left: 8%;
         }
     
-        &__title {
+        &-title {
             font-size: calc($h2-font-size * 0.8);
         }
     
-        &__subtitle {
+        &-subtitle {
             color:$light-color;
             font-weight: 400;
             font-size: calc($h3-font-size * 0.7);
@@ -49,4 +66,5 @@
         }
     }
 
+   
 }
