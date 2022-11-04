@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { Divider } from '../../components';
+import { MdKeyboardArrowUp } from 'react-icons/md';
+import { images } from '../../constants';
 
 import './filters.scss';
+
 
 const category = [{ name: 'tours' }, { name: 'Landmarks' }, { name: 'Museums' }, { name: 'Activities' }];
 const advStyles = [{ name: 'Hiking & Trekking' }, { name: 'River Cruises' }, { name: 'Safari' }, { name: 'Explore Europe' }, { name: 'Popular Adventure' }];
 const Filters = () => {
+    const [isDropDown, setIsDropDown] = useState(true);
     const [minRange, setMinRange] = useState(0);
     const [maxRange, setMaxRange] = useState(100);
 
@@ -27,78 +32,274 @@ const Filters = () => {
         setAdvStyles(updatedAdvStyles);
     }
 
-    
+
+    console.log(isDropDown);
 
 
 
     return (
         <div className='filters'>
-            <h3 className="filters__found-info">{minRange} results were found {maxRange}</h3>
-            <span>Price</span>
-            <div className="filters__rangeInputs">
-                <input
-                    className='filters__range'
-                    type="range"
-                    min="0"
-                    max="49"
-                    value={minRange}
-                    onChange={(e) => setMinRange(e.target.value)}
-                />
-                <input
-                    className='filters__range'
-                    type="range"
-                    min="49"
-                    max="100"
-                    value={maxRange}
-                    onChange={(e) => setMaxRange(e.target.value)}
-                />
+            <h2 className="filters__title">Filter</h2>
+            <div className="filters__dropdown">
+                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
+                    Price  
+                    <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
+                </h3>
+
+                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">₪ 0 - ₪ 70<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">₪ 70 - ₪ 140 <span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">₪ 140 - ₪ 263 <span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">₪ 263 - ₪ 437 <span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">₪ 437+<span>(123)</span></label>
+                    </div>
+                </div>
             </div>
-            <span>Category</span>
-            {
-                category.map(({ name }, index) => {
-                    return (
-                        <li key={index}>
-                            <div className="toppings-list-item">
-                                <div className="left-section">
-                                    <input
-                                        type="checkbox"
-                                        id={`custom-checkbox-${index}`}
-                                        name={name}
-                                        value={name}
-                                        checked={checkedCategory[index]}
-                                        onChange={() => handleOnCategory(index)}
-                                    />
-                                    <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
-                                </div>
+            <Divider />
 
-                            </div>
-                        </li>
-                    )
-                })}
-            <span>Adventure Styles</span>
-            {
-                advStyles.map(({ name }, index) => {
-                    return (
-                        <li key={index}>
-                            <div className="toppings-list-item">
-                                <div className="left-section">
-                                    <input
-                                        type="checkbox"
-                                        id={`custom-checkbox-${index}`}
-                                        name={name}
-                                        value={name}
-                                        checked={checkedAdvStyles[index]}
-                                        onChange={() => handleOnAdvStyles(index)}
-                                    />
-                                    <label htmlFor={`custom-checkbox-${index}`}>{name}</label>
-                                </div>
 
-                            </div>
-                        </li>
-                    )
-                })}
-                 <span>Rating</span>
 
+            <div className="filters__dropdown">
+                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
+                    Category  
+                    <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
+                </h3>
+
+                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Tours<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Activities<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Landmarks<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Museums <span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Attractions<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Transportation & services<span>(123)</span></label>
+                    </div>
+                </div>
+            </div>
+            <Divider />
+
+
+
+            <div className="filters__dropdown">
+                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
+                Rating  
+                <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
+                </h3>
+
+                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox"><img src={images.five_star} alt="five start" /><span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox"><img src={images.four_star} alt="five start" /><span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox"><img src={images.three_star} alt="five start" /><span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox"><img src={images.two_star} alt="five start" /> <span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox"><img src={images.one_star} alt="five start" /><span>(123)</span></label>
+                    </div>                    
+                </div>
+            </div>
+            <Divider />
+
+
+
+            <div className="filters__dropdown">
+                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
+                Adventure Styles  
+                <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
+                    
+                </h3>
+
+                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Hiking & Trekking<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">River Cruises<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Safari<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Explore Europe<span>(123)</span></label>
+                    </div>
+                    <div className="filters__dropdown-input">
+                        <input
+                            type="checkbox"
+                            id="custom-checkbox"
+                            className='filters__dropdown-checkbox'
+                            name="name"
+                            value="name"
+                        />
+                        <label htmlFor="custom-checkbox">Popular Adventure<span>(123)</span></label>
+                    </div>                    
+                </div>
+            </div>
+            <Divider />
         </div>
     )
 }

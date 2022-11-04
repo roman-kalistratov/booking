@@ -51,16 +51,16 @@ body {
     &__left,
     &__right {
         border:1px solid $light-color;
-        border-radius:0.4rem;
+        border-radius:0.8rem;
     }
 
     &__left {
-        flex-basis: 35%;        
+        flex-basis: 25%;        
         margin-right: 2rem;
     }
 
     &__right {
-        flex-basis: 65%;
+        flex-basis: 75%;
     }
 }
 

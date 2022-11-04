@@ -6,14 +6,14 @@ import { TfiUser } from "react-icons/tfi";
 import './navbar.scss';
 
 const Navbar = () => {
-    const [isActive, setIsActive] = useState('Home');
+    const [isActive, setIsActive] = useState('home');
 
     useEffect(() => {
         window.addEventListener("scroll", isSticky);
         return () => {
             window.removeEventListener("scroll", isSticky);
         };
-    });
+    });    
 
     const isSticky = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;

@@ -76,11 +76,12 @@ const TopToursSlider = () => {
                 // autoplay={{
                 //     delay: 4500,
                 //     disableOnInteraction: false,
-                // }}                
+                // }}       
+                navigation={true}         
                 freeMode={true}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={4}
-                modules={[Autoplay, FreeMode]}
+                modules={[Autoplay,Navigation,FreeMode]}
                 className="topToursSlider">               
 
                 {toursSliderData.map((tour) => 

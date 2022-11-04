@@ -7,11 +7,12 @@
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
-  background-color: $blue-color;
-  color: $white-color;
+  color: $primary-color;
   cursor: pointer;
   animation: anim .5s forwards;
   z-index: 99999;
+  -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.67);
 }
 
 @keyframes anim {
@@ -26,7 +27,5 @@
 
 .scroll-up:hover {
   opacity: 1 !important;
-
-
-  transition:all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
