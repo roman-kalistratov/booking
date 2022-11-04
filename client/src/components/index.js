@@ -10,6 +10,7 @@ import Adventures from './Adventures/Adventures';
 import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
+import Results from './Results/Results';
 
 
 export {
@@ -24,5 +25,6 @@ export {
     Adventures,
     Subscribe,
     Filters,
-    ScrollToTop
+    ScrollToTop,
+    Results
   };
