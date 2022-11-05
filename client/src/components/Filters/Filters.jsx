@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Divider } from '../../components';
+import { Divider, DropDownNav, DropDownItem } from '../../components';
 import { MdKeyboardArrowUp } from 'react-icons/md';
+import FilterItem from './FilterItem';
 import { images } from '../../constants';
 
 import './filters.scss';
@@ -32,274 +33,93 @@ const Filters = () => {
         setAdvStyles(updatedAdvStyles);
     }
 
+    const prices = [
+        {
+            value: '₪ 0 - ₪ 70',
+            cnt: '123'
+        }, {
+            value: '₪ 70 - ₪ 140',
+            cnt: '111'
+        }, {
+            value: '₪ 140 - ₪ 263',
+            cnt: '21'
+        }, {
+            value: '₪ 263 - ₪ 437',
+            cnt: '11'
+        }, {
+            value: '₪ 437+',
+            cnt: '152'
+        }
+    ]
 
-    console.log(isDropDown);
+    const categories = [
+        {
+            value: 'Tours',
+            cnt: '123'
+        }, {
+            value: 'Activities',
+            cnt: '111'
+        }, {
+            value: 'Landmarks',
+            cnt: '21'
+        }, {
+            value: 'Museums',
+            cnt: '11'
+        }, {
+            value: 'Attractions',
+            cnt: '152'
+        }, {
+            value: 'Transportation & services',
+            cnt: '152'
+        }
+    ]
 
+    const rating = [
+        {
+            value: images.five_star,
+            cnt: '123'
+        }, {
+            value: images.four_star,
+            cnt: '111'
+        }, {
+            value: images.three_star,
+            cnt: '21'
+        }, {
+            value: images.two_star,
+            cnt: '11'
+        }, {
+            value: images.one_star,
+            cnt: '152'
+        }
+    ]
 
+    const styles = [
+        {
+            value: "Hiking & Trekking",
+            cnt: '123'
+        }, {
+            value: "River Cruises",
+            cnt: '111'
+        }, {
+            value: "Safari",
+            cnt: '21'
+        }, {
+            value: "Explore Europe",
+            cnt: '11'
+        }, {
+            value: "Popular Adventure",
+            cnt: '152'
+        }
+    ]
 
     return (
         <div className='filters'>
             <h2 className="filters__title">Filter</h2>
-            <div className="filters__dropdown">
-                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
-                    Price  
-                    <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
-                </h3>
 
-                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">₪ 0 - ₪ 70<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">₪ 70 - ₪ 140 <span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">₪ 140 - ₪ 263 <span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">₪ 263 - ₪ 437 <span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">₪ 437+<span>(123)</span></label>
-                    </div>
-                </div>
-            </div>
-            <Divider />
-
-
-
-            <div className="filters__dropdown">
-                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
-                    Category  
-                    <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
-                </h3>
-
-                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Tours<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Activities<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Landmarks<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Museums <span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Attractions<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Transportation & services<span>(123)</span></label>
-                    </div>
-                </div>
-            </div>
-            <Divider />
-
-
-
-            <div className="filters__dropdown">
-                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
-                Rating  
-                <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
-                </h3>
-
-                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox"><img src={images.five_star} alt="five start" /><span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox"><img src={images.four_star} alt="five start" /><span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox"><img src={images.three_star} alt="five start" /><span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox"><img src={images.two_star} alt="five start" /> <span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox"><img src={images.one_star} alt="five start" /><span>(123)</span></label>
-                    </div>                    
-                </div>
-            </div>
-            <Divider />
-
-
-
-            <div className="filters__dropdown">
-                <h3 className="filters__dropdown-title" onClick={() => setIsDropDown(!isDropDown)}>
-                Adventure Styles  
-                <span className={`filters__dropdown-icon ${isDropDown ? 'open' : ''}`}><MdKeyboardArrowUp /></span>
-                    
-                </h3>
-
-                <div className={`filters__dropdown-item ${isDropDown ? 'open' : ''}`}>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Hiking & Trekking<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">River Cruises<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Safari<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Explore Europe<span>(123)</span></label>
-                    </div>
-                    <div className="filters__dropdown-input">
-                        <input
-                            type="checkbox"
-                            id="custom-checkbox"
-                            className='filters__dropdown-checkbox'
-                            name="name"
-                            value="name"
-                        />
-                        <label htmlFor="custom-checkbox">Popular Adventure<span>(123)</span></label>
-                    </div>                    
-                </div>
-            </div>
-            <Divider />
+            <FilterItem data = {prices} title = "Price" trigger="" />
+            <FilterItem data = {categories} title = "Categories" trigger="" />
+            <FilterItem data = {rating} title = "Rating" trigger="images" />
+            <FilterItem data = {styles} title = "Adventure Styles" trigger="" />
         </div>
     )
 }

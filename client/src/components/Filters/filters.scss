@@ -10,116 +10,68 @@
         letter-spacing: 0.3rem;
     }
 
-    &__dropdown {
-        padding: 1rem 1rem 0 1rem;
-        overflow: hidden;
+    &-input {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 0.7rem;
 
-        &-title {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            color: $black-color;
-            font-family: $secondary-font;
-            font-weight: 500;
-            font-size: $normal-font-size; 
-        }
-
-        &-icon {
-            font-size: 2.4rem;
-            color: $light-color;
-            cursor: pointer;
-            transform: rotate(0deg);
-            transition: transform .4s ease-in-out ;
-
-            &.open {
-                transform: rotate(180deg);
-            }
-        }
-
-        &-item {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            transform: translateX(-100%);
-            opacity: 0;
-           
-            position: absolute;
-            transition: transform .4s ease; 
-            z-index: -1;           
-
-            &.open {
-                transform: translateX(0);
-                opacity: 1;
-                position: relative;
-                z-index: 1;
-            }
-        }
-
-        &-input {
+        & label {
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 0.7rem;
+            justify-content: center;
+            margin-left: 0.8rem;
+            cursor: pointer;
 
-            & label {
-                font-size: 1.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-left: 0.8rem;
-                cursor: pointer;
-
-                & img {
-                    width: 100px;
-                }
+            & img {
+                width: 100px;
             }
+        }
 
-            & label span {
-                font-size: 1.3rem;
-                color: #a29e9e;
-                margin-left: 0.5rem;
-            }
+        & label span {
+            font-size: 1.3rem;
+            color: #a29e9e;
+            margin-left: 0.5rem;
+        }
 
-            & input[type="checkbox"] {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 1.6rem;
-                height: 1.6rem;
-                margin-top: 0.4rem;
-                border-radius: 50%;
-                border: 1px solid $light-color;
-                outline: none;
-                cursor: pointer;
-            }
+        & input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-top: 0.4rem;
+            border-radius: 50%;
+            border: 1px solid $light-color;
+            outline: none;
+            cursor: pointer;
+        }
 
-            & input[type="checkbox"]:disabled {
-                border-color: #c0c0c0;
-                background-color: #c0c0c0;
-            }
+        & input[type="checkbox"]:disabled {
+            border-color: #c0c0c0;
+            background-color: #c0c0c0;
+        }
 
-            & input[type="checkbox"]:disabled+span {
-                color: #c0c0c0;
-            }
+        & input[type="checkbox"]:disabled+span {
+            color: #c0c0c0;
+        }
 
-            //   & input[type="checkbox"]:focus {
-            //     border: 1px solid $blue-color;
-            //   }
+        //   & input[type="checkbox"]:focus {
+        //     border: 1px solid $blue-color;
+        //   }
 
-            input:checked {
-                position: relative;
-            }
+        input:checked {
+            position: relative;
+        }
 
-            input:checked::before {
-                content: "\2714";
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: $blue-color;
-                position: absolute;
-                right: 1px;
-                top: -5px;
-            }
+        input:checked::before {
+            content: "\2714";
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: $blue-color;
+            position: absolute;
+            right: 1px;
+            top: -5px;
         }
     }
 }

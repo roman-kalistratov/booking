@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Destinations } from './pages';
+import { Home, Destinations,Profile } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
 import {ScrollToTop } from './components';
@@ -12,6 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/destinations" element={<Destinations />} />
+          <Route path="/profile" element={<Profile />} />
+               
+      
         </Routes>
       </BrowserRouter>      
     </>

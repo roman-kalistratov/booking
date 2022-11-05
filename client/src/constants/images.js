@@ -11,6 +11,11 @@ import three_star from '../assets/three_star.png';
 import four_star from '../assets/four_star.png';
 import five_star from '../assets/five_star.png';
 import no_star from '../assets/no_star.png';
+import edit from '../assets/edit.png';
+import log_out from '../assets/log-out.png';
+import settings from '../assets/settings.png';
+import user from '../assets/user.png';
+import dashboard from '../assets/dashboard.png';
 
 const images = {    
     logo_rk,
@@ -25,7 +30,12 @@ const images = {
     three_star,
     four_star,
     five_star,
-    no_star
+    no_star,
+    edit,
+    log_out,
+    settings,
+    user,
+    dashboard
 };
 
 export default images;

@@ -11,6 +11,9 @@ import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Results from './Results/Results';
+import Sidebar from './Sidebar/Sidebar';
+import DropDownNav from './DropDownNav/DropDownNav';
+import DropDownItem from './DropDownNav/DropDownItem';
 
 
 export {
@@ -26,5 +29,8 @@ export {
     Subscribe,
     Filters,
     ScrollToTop,
-    Results
+    Results,
+    Sidebar,
+    DropDownNav,
+    DropDownItem
   };

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { TfiUser } from "react-icons/tfi";
 import { images } from '../../constants';
 
-import { TfiUser } from "react-icons/tfi";
 import './navbar.scss';
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
         return () => {
             window.removeEventListener("scroll", isSticky);
         };
-    });    
+    });
 
     const isSticky = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -21,9 +21,9 @@ const Navbar = () => {
 
         scrollTop >= 50
             ? (header.classList.add('sticky'))
-            : (header.classList.remove('sticky'));       
+            : (header.classList.remove('sticky'));
     };
-   
+
     return (
         <nav className="navbar">
             <div className="navbar__wrapper">
@@ -40,7 +40,50 @@ const Navbar = () => {
                 <img className='navbar__logo' src={images.logo} alt="logo" />
             </Link>
 
-            <Link to="/" className="navbar__link navbar__account" ><TfiUser className='navbar__user-icon' />Account</Link>
+
+            <div class="dropdown">
+                <div className='dropdown__trigger'>
+                    <TfiUser className='navbar__user-icon dropbtn' />
+                    <span>Account</span>
+                </div>
+
+                <ul className='dropdown__list'>
+                <h3 className='dropdown__title'>Hello <span>Roman</span> </h3>
+                    <li className='dropdown__item'>
+                        <Link to="/profile" className="navbar__link">
+                            <img src={images.user} alt="drop icon" />
+                            My Profile
+                        </Link>
+
+                    </li>
+                    <li className='dropdown__item'>
+                        <Link to="/" className="navbar__link">
+                            <img src={images.dashboard} alt="drop icon"/>
+                            Dashboard
+                        </Link>
+
+                    </li>
+                    <li className='dropdown__item'>
+                        <Link to="/" className="navbar__link">
+                            <img src={images.edit} alt="drop icon"/>
+                            Edit Profile
+                        </Link>
+                    </li>
+                    <li className='dropdown__item'>
+                        <Link to="/" className="navbar__link">
+                            <img src={images.settings} alt="drop icon"/>
+                            Settings
+                        </Link>
+
+                    </li>
+                    <li className='dropdown__item'>
+                        <Link to="/" className="navbar__link">
+                            <img src={images.log_out} alt="drop icon"/>
+                            Logout
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </nav>
     );
 };
