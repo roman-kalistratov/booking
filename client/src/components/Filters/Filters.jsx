@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Divider, DropDownNav, DropDownItem } from '../../components';
-import { MdKeyboardArrowUp } from 'react-icons/md';
 import FilterItem from './FilterItem';
 import { images } from '../../constants';
 
@@ -115,8 +113,7 @@ const Filters = () => {
     return (
         <div className='filters'>
             <h2 className="filters__title">Filter</h2>
-
-            <FilterItem data = {prices} title = "Price" trigger="" />
+            <FilterItem data = {prices} title = "Price" trigger="" />            
             <FilterItem data = {categories} title = "Categories" trigger="" />
             <FilterItem data = {rating} title = "Rating" trigger="images" />
             <FilterItem data = {styles} title = "Adventure Styles" trigger="" />

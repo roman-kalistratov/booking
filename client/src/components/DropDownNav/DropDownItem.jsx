@@ -4,11 +4,12 @@ import './dropDownNav.scss';
 
 const DropDownItem = ({ title, children }) => {
   const [open, setOpen] = useState(true);
+
   return (
     <li className="dropDownNav-item">
       <div className="dropDownNav-title" onClick={() => setOpen(!open)}>
         {title}
-        <span className={`dropDownNav-icon ${open ? 'open' : ''}`}><MdKeyboardArrowRight /></span>
+        <span className={`dropDownNav-icon ${open ? 'open' : 'close'}`}><MdKeyboardArrowRight /></span>
       </div>
 
       <div className={`dropDownNav-menu ${open ? "open" : ''}`}>

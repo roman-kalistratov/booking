@@ -9,11 +9,12 @@
         display: flex;
         justify-content: space-between;
         align-content: center;
-        color: $black-color;
+        color: inherit;
         font-family: $secondary-font;
         font-weight: 500;
         font-size: $normal-font-size;
         letter-spacing: 0.1rem;
+        text-transform: capitalize;
     }
 
     &-icon {
@@ -28,19 +29,25 @@
         }
     }
 
-    &-item {      
+    &-item {
         position: relative;
         overflow: hidden;
+        padding-bottom: 0.1rem;
     }
 
     &-menu {
         position: absolute;
         transform: translateX(-100%);
-        transition: transform .7s ease;      
+        transition: transform .7s ease;
 
         &.open {
-            transform: translateX(0);             
-            position: relative;                 
+            transform: translateX(0);
+            position: relative;
+        }
+
+        &.close {
+            position: absolute;
+            transform: translateX(-100%);
         }
     }
 }

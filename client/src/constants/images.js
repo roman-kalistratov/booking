@@ -12,10 +12,21 @@ import four_star from '../assets/four_star.png';
 import five_star from '../assets/five_star.png';
 import no_star from '../assets/no_star.png';
 import edit from '../assets/edit.png';
+import edit_white from '../assets/edit-white.png';
 import log_out from '../assets/log-out.png';
+import log_out_white from '../assets/log-out-white.png';
 import settings from '../assets/settings.png';
+import settings_white from '../assets/settings-white.png';
 import user from '../assets/user.png';
+import user_white from '../assets/user-white.png';
 import dashboard from '../assets/dashboard.png';
+import dashboard_white from '../assets/dashboard-white.png';
+import users_white from '../assets/people-white.png';
+import add_user from '../assets/add-user-white.png';
+import delete_user from '../assets/delete-user-white.png';
+import note from '../assets/note-white.png';
+import add_note from '../assets/add-note-white.png';
+import delete_note from '../assets/delete-note-white.png';
 
 const images = {    
     logo_rk,
@@ -32,10 +43,21 @@ const images = {
     five_star,
     no_star,
     edit,
+    edit_white,
     log_out,
     settings,
+    settings_white,
     user,
-    dashboard
+    user_white,
+    dashboard,
+    dashboard_white,
+    users_white,
+    add_user,
+    delete_user,
+    note,
+    add_note,
+    delete_note,
+    log_out_white
 };
 
 export default images;

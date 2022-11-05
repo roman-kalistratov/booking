@@ -4,15 +4,15 @@
     height: 100%;
     overflow: hidden;
     padding: 1rem;
-    color:$white-color;
+    color: $white-color;
     background-image: linear-gradient(to bottom, #146ca3, #16618f, #19567c, #1c4c69, #1e4157);
-    
+
     &__top {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         border-bottom: 0.5px solid #a09b9b;
-        padding: 0 0 1rem 0;        
+        padding: 0 0 1rem 0;
     }
 
     &__logo {
@@ -27,31 +27,58 @@
 
     &__username {
         margin-left: auto;
-
-        color:$light-color;
+        color: $light-color;
     }
 
-    &__dropdown {
-        &-list {
-            display: flex;
-            flex-direction: column;
-            align-items:flex-start;
-        }
+    &__logout {
+        margin-left: auto;
+       
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        padding-top: 1rem;
+        cursor: pointer;
 
-        &-item {
-            padding: 1rem 2rem;
-            width: 100%;
-            cursor: pointer;
-
-            &.active {
-                
-            }
-        }
-
-        &-btn {
-            display: flex;
-            justify-content: space-between;
-            align-items:center;
+        & img {
+            width: 25px;
+            margin-right: 1rem;
+            margin-left: auto;
         }
     }
+
+    &__back {
+        margin-right: auto;
+
+    }
+
+
+
+    &__link {
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem 0 0.5rem 2rem;
+        border-radius: 0.8rem;
+        width: 95%;
+        margin: auto;
+
+        &:hover,
+        &.active {
+            -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.67);
+            box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);
+        }
+
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
+
+    &__icon {
+        width: 2.5rem;
+        margin-right: 1rem;
+    }
+
+
 }

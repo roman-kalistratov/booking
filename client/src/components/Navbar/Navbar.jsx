@@ -64,7 +64,7 @@ const Navbar = () => {
 
                     </li>
                     <li className='dropdown__item'>
-                        <Link to="/" className="navbar__link">
+                        <Link to="/edit-profile" className="navbar__link">
                             <img src={images.edit} alt="drop icon"/>
                             Edit Profile
                         </Link>

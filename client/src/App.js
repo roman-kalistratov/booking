@@ -1,18 +1,21 @@
 import React from 'react';
-import { Home, Destinations,Profile } from './pages';
+import { Home, Destinations,Profile,EditProfile } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
 import {ScrollToTop } from './components';
 
 
 function App() {
+
+  
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route exact  path="/" element={<Home />} />
+          <Route exact  path="/destinations" element={<Destinations />} />
+          <Route exact  path="/profile" element={<Profile />} />
+          <Route exact  path="/edit-profile" element={<EditProfile />} />
                
       
         </Routes>
