@@ -1,32 +1,45 @@
 @import '../../scss/vars';
 
 .profile {
+
     &__avatar {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        margin-left: 1rem;
+        margin-top: 1rem;
+
         & img {
-            width: 250px;
-            height: 250px;
             object-fit: cover;
-            border: 1px solid $light-color;
-            border-radius: 0.8rem;
+            border-radius: 50%;
+        }
+
+        &:before {
+            content: '';
+            width: 110%;
+            height: 110%;
+            left: -5%;
+            top: -5%;
+            position: absolute;
+            border: 3px solid $blue-color;
+            opacity: .3;
+            border-radius: 50%;
         }
     }
 
     &__info {
         text-align: left;
-        margin-left: 2rem;
-        display: flex;
-        flex-direction: column;        
-        align-items: flex-start;
+        margin-left: 2rem;     
 
         & h3 {
             width: 250px;
             font-size: 1.6rem;
-            letter-spacing: 0.1rem; 
-            border: 1px solid $light-color;
-            border-radius: 0.8rem;
-            padding: 1.5rem 2rem;
-            -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67);
-            box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67); 
+            letter-spacing: 0.1rem;
+            // border: 1px solid $light-color;
+            // border-radius: 0.8rem;
+            // padding: 1.5rem 2rem;
+            // -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67);
+            // box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67);
 
             & span {
                 color: $black-color;
@@ -58,75 +71,60 @@
 
 .form {
     margin-left: 2rem;
+    width: 600px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: $secondary-color;
 
-    &__label {
-        width: 450px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid $light-color;
-        border-radius: 0.8rem;
-        padding: 1rem 2rem;
-        -webkit-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67);
-        box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.67);
-        position: relative;
-
-        &:not(:first-child)
-        {
-            margin-top: 1rem;
-        }
-
-        & h3 {
-            font-size: 1.6rem;
-            letter-spacing: 0.1rem;   
-            flex-basis: 30%;
-            text-align: left;         
-        }
-
-
-        & input {
-            all:unset;
-            cursor: text;
-            border:1px solid $light-color;
-            border-radius:0.8rem;
-            padding: 1rem;
-            flex-basis: 70%;
-            margin-left: 1rem;
-
-            &:hover,
-            &:focus {
-                -webkit-box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27); 
-                box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27); 
-            }
-        }
-
-        input[type="file"] {
-            cursor:pointer;
-        }
-        input[type="file"]::file-selector-button {
-            border:none;
-            background-color:inherit;
-            cursor:inherit;
-            background-color:$blue-color;  
-            border-radius: 0.8rem;
-            color:$white-color;
-            padding: 1rem; 
-            opacity: .6;   
-            transition: opacity .2s ease-in-out;
-            
-            
-            &:hover {
-                opacity: 1;
-            }
-        }
-
+    .aa {
+        width: 48%;
     }
 
+    &__label {
+        font-size: $normal-font-size;
+        letter-spacing: 0.1rem;
+        text-align: left;
+        color:inherit;
+        margin-bottom: 0.5rem;
 
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
 
+    & input {       
+        all: unset;
+        cursor: text;
+        border: 1px solid #c0c3c7;
+        border-radius: 0.8rem;
+        padding: 1rem 0.5rem;       
+        width: 100%;
 
+        &:hover,
+        &:focus {
+            -webkit-box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27);
+            box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27);
+        }
+    }
 
+    input[type="file"] {
+        cursor: pointer;
+    }
+
+    input[type="file"]::file-selector-button {
+        border: none;
+        background-color: inherit;
+        cursor: inherit;
+        background-color: $blue-color;
+        border-radius: 0.8rem;
+        color: $white-color;
+        padding: 1rem;
+        opacity: .9;
+        transition: opacity .2s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

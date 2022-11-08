@@ -27,6 +27,7 @@ import delete_user from '../assets/delete-user-white.png';
 import note from '../assets/note-white.png';
 import add_note from '../assets/add-note-white.png';
 import delete_note from '../assets/delete-note-white.png';
+import avatar from '../assets/avatar-1.png';
 
 const images = {    
     logo_rk,
@@ -57,7 +58,8 @@ const images = {
     note,
     add_note,
     delete_note,
-    log_out_white
+    log_out_white,
+    avatar
 };
 
 export default images;

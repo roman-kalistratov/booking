@@ -13,7 +13,6 @@ import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Results from './Results/Results';
 import Sidebar from './Sidebar/Sidebar';
 import DropDownNav from './DropDownNav/DropDownNav';
-import DropDownItem from './DropDownNav/DropDownItem';
 import Card from './Card/Card';
 
 
@@ -33,6 +32,5 @@ export {
     Results,
     Sidebar,
     DropDownNav,
-    DropDownItem,
     Card
   };

@@ -91,7 +91,6 @@ const Sidebar = () => {
             <div className="sidebar__top">
                 <img src={images.logo} alt="logo" className="sidebar__logo" />
                 <h2 className="sidebar__title">R-tours</h2>
-                <h3 className='sidebar__username'>Hello admin</h3>
             </div>
 
             <div className="sidebar__nav">
