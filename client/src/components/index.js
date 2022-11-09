@@ -11,9 +11,8 @@ import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Results from './Results/Results';
-import Sidebar from './Sidebar/Sidebar';
 import DropDownNav from './DropDownNav/DropDownNav';
-import Card from './Card/Card';
+import Card from '../admin/components/Card/Card';
 
 
 export {
@@ -30,7 +29,6 @@ export {
     Filters,
     ScrollToTop,
     Results,
-    Sidebar,
     DropDownNav,
     Card
   };

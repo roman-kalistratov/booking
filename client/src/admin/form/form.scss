@@ -1,0 +1,49 @@
+@import '../../scss/vars';
+
+
+.form {   
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: $secondary-color;
+
+    &__label {
+        font-size: $normal-font-size;
+        letter-spacing: 0.1rem;
+        margin-top: 1rem;
+        text-align: left;
+        color: inherit;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-left,
+        &-right {
+            width: 48%;          
+        }
+
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
+
+    
+
+    &__password {
+        width: 100%;
+        position: relative;
+
+        & svg {
+            position: absolute;
+            right: 1%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            opacity: .6;
+        }
+    }
+}

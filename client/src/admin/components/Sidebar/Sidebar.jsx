@@ -1,6 +1,6 @@
 import React from 'react';
 import SidebarItem from './SidebarItem';
-import { images } from '../../constants';
+import { images } from '../../../constants';
 import './sidebar.scss'
 
 const accountData = [

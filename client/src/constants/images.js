@@ -25,8 +25,11 @@ import users_white from '../assets/people-white.png';
 import add_user from '../assets/add-user-white.png';
 import delete_user from '../assets/delete-user-white.png';
 import note from '../assets/note-white.png';
-import add_note from '../assets/add-note-white.png';
-import delete_note from '../assets/delete-note-white.png';
+import add_note_white from '../assets/add-note-white.png';
+import add_note from '../assets/add-note-black.png';
+import delete_note_white from '../assets/delete-note-white.png';
+import delete_note_red from '../assets/delete-note-red.png';
+import delete_note from '../assets/delete-note.png';
 import avatar from '../assets/avatar-1.png';
 
 const images = {    
@@ -56,7 +59,10 @@ const images = {
     add_user,
     delete_user,
     note,
+    add_note_white,
     add_note,
+    delete_note_white,
+    delete_note_red,
     delete_note,
     log_out_white,
     avatar

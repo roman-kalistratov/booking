@@ -1,0 +1,52 @@
+@import '../../../scss/vars';
+.avatar {
+    position: relative;
+    transition: transform .2s ease-in-out;
+
+    & img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &:before {
+        content: '';
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        position: absolute;
+        border: 3px solid $blue-color;
+        opacity: .3;
+        border-radius: 50%;
+    }
+
+    &-profile {
+        width: 200px;
+        height: 200px;       
+        margin-left: 1rem;
+        margin-right: 2rem;
+        margin-top: 1rem;
+    }
+
+    &-user-list {
+        width: 35px;
+        height: 35px;
+        margin: auto; 
+        
+        &:before{
+            display: none;
+        }
+       
+        & img { 
+            cursor: pointer;
+            transition: transform .3s ease-in-out;
+            
+            &:hover {
+                transform: scale(4) translateY(-6px);
+            }
+
+           
+        }
+    }
+    
+}

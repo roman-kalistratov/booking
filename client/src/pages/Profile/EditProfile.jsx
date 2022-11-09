@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { Sidebar, Card } from '../../components';
+import { Card } from '../../components';
 import { Link } from "react-router-dom";
 import { images } from '../../constants';
+import { Sidebar } from '../../admin/components';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from "yup";
 
-import './profile.scss';
+
 
 const regex = `^[0][5][0|2|3|4|5|9]{1}[-]{0,1}[0-9]{7}$`;
 

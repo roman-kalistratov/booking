@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { DropDownNav } from '../../components';
+import { DropDownNav } from '../../../components';
 import { Link } from "react-router-dom";
 
 import './sidebar.scss'

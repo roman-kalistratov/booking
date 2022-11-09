@@ -1,0 +1,53 @@
+@import '../../../scss/vars';
+
+.header-admin {
+    height: $nav-height;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: linear-gradient(to right, #146ca3, #16618f, #19567c, #1c4c69, #1e4157);
+    border-bottom: 1px solid rgb(255 255 255 / .4);
+    border-left: 1px solid rgb(255 255 255 / .4);
+
+    & a {
+        color: $white-color;
+        border-left: 1px solid rgb(255 255 255 / .4);
+        padding: 0 2rem;
+        height: 100%;
+
+        &:hover {
+            background-image: radial-gradient(circle, #375e76, #31576e, #2a4f66, #24485f, #1e4157);
+        }
+    }
+
+    &__user {
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        border-right: 1px solid rgb(255 255 255 / .4);
+        height: 100%;
+
+        &-img {
+            width: 45px;
+            border-radius: 50%;
+        }
+
+        &-name {
+            margin-left: 1rem;
+            font-weight: 300;
+            font-family: $secondary-font;
+            color: inherit;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        & img {
+            width: 25px;
+            margin-right: 1rem;
+        }
+    }
+}

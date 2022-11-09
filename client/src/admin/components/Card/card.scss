@@ -1,12 +1,8 @@
-@import '../../scss/vars';
+@import '../../../scss/vars';
 
 .card {
     border:1px solid $light-color;
     margin: 3rem;
     border-radius: 0.8rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items:flex-start;
     padding: 1rem;
-
 }
