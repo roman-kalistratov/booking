@@ -9,40 +9,17 @@ const accountData = [
         title: "Profile",
         icon: images.user_white,
         link: 'profile'
-    },
-    {
-        id: 11,
-        title: "Edit Profile",
-        icon: images.edit_white,
-        link: 'edit-profile'
-    },
-    {
-        id: 12,
-        title: "Change Password",
-        icon: images.settings_white,
-        link: 'change-password'
     }
+    
 ]
 
 const userData = [
     {
         id: 13,
-        title: "All users",
+        title: "Users",
         icon: images.users_white,
         link: 'users'
-    },
-    {
-        id: 14,
-        title: "Add User",
-        icon: images.add_user,
-        link: 'new-user'
-    },
-    {
-        id: 15,
-        title: "Delete user",
-        icon: images.delete_user,
-        link: 'delete-user'
-    }
+    }   
 ]
 const destinationsData = [
     {
@@ -96,7 +73,7 @@ const Sidebar = () => {
             <div className="sidebar__nav">
                 <SidebarItem data={accountData} title='account' />
                 <SidebarItem data={userData} title='users' />
-                <SidebarItem data={destinationsData} title='Destinations' />
+                <SidebarItem data={destinationsData} title='destinations' />
                 <SidebarItem data={toursData} title='Tours' />
             </div>
         </div>

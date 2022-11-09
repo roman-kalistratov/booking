@@ -40,44 +40,5 @@
             color: #a29e9e;
             margin-left: 0.5rem;
         }
-
-        & input[type="checkbox"] {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 1.6rem;
-            height: 1.6rem;
-            margin-top: 0.4rem;
-            border-radius: 50%;
-            border: 1px solid $light-color;
-            outline: none;
-            cursor: pointer;
-        }
-
-        & input[type="checkbox"]:disabled {
-            border-color: #c0c0c0;
-            background-color: #c0c0c0;
-        }
-
-        & input[type="checkbox"]:disabled+span {
-            color: #c0c0c0;
-        }
-
-        //   & input[type="checkbox"]:focus {
-        //     border: 1px solid $blue-color;
-        //   }
-
-        input:checked {
-            position: relative;
-        }
-
-        input:checked::before {
-            content: "\2714";
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: $white-color;
-            position: absolute;
-            right: 1px;
-            top: -5px;
-        }
     }
 }

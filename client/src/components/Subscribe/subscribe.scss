@@ -11,6 +11,8 @@
 
     &__form {
         margin-top: 1rem;
+        max-width: 30%;
+        margin: auto;
     }
 
     &__label {
@@ -27,8 +29,6 @@
         border-radius: 0.4rem;
         padding: 0.5rem 1.2rem;
         margin: 2rem 2rem 1rem 0;
-
-
     }
 
     & button {
