@@ -1,0 +1,11 @@
+@import '../../scss/vars';
+
+.spinner {
+    width: 100%;
+    height: calc(100vh - $nav-height);
+    display: flex;
+
+    & img {
+        margin: auto;
+    }
+}
