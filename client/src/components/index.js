@@ -12,7 +12,7 @@ import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
 import Search from './Search/Search';
 import DropDownNav from './DropDownNav/DropDownNav';
-import Card from '../admin/components/Card/Card';
+import Spinner from './Spinner/Spinner';
 
 
 export {
@@ -30,5 +30,5 @@ export {
     ScrollToTop,
     Search,
     DropDownNav,
-    Card
+    Spinner
   };

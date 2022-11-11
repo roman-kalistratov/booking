@@ -8,12 +8,13 @@ import {
   Destinations, 
   Adventures, 
   Subscribe,
-  ScrollToTop } from '../../components';
+  ScrollToTop,Spinner } from '../../components';
 
 const Home = () => {
   return (
     <>
       <Navbar />
+      
       <Header />
       <div class="wrapper">
         <main class="main">
