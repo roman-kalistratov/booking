@@ -31,7 +31,6 @@ import delete_note_white from '../assets/delete-note-white.png';
 import delete_note_red from '../assets/delete-note-red.png';
 import delete_note from '../assets/delete-note.png';
 import avatar from '../assets/avatar-1.png';
-import preloader from '../assets/preloader.gif';
 
 const images = {    
     logo_rk,
@@ -66,8 +65,7 @@ const images = {
     delete_note_red,
     delete_note,
     log_out_white,
-    avatar,
-    preloader
+    avatar
 };
 
 export default images;
