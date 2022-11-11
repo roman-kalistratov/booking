@@ -1,4 +1,5 @@
 @import '../../scss/vars';
+@import '../../scss/mixins';
 
 .navbar {
     width: 100%;
@@ -57,48 +58,63 @@
         position: relative;
         text-transform: capitalize;
 
-        &:not(.active):after,
-        &:not(.active):before,
-        &.active:before,
-        &.active:after {
+        &:before,
+        &:after {
+            content: '';            
+            bottom: -30%;
+            width: 0;
+            height: 1px;
+            position: absolute;
+            background-color: $white-color;
+            transition: all .2s ease-in-out;
+        }
+
+        &:before {
+            right: 0;
+        }
+        &:after {
+            left: 0;
+        }
+
+        &:hover {
+            &:before {
+                width: 50%;
+            }
+            &:after {
+                width: 50%;
+            }
+        }
+          
+        & a.active:before,
+        & a.active:after {
             content: '';
             position: absolute;
-            top: 130%;
+            top: 125%;
             width: 0;
             height: 1px;
             background-color: $white-color;
             transition: all .2s ease-in-out;
         }
 
-        &:before {
+        & a.active::before {
             left: 0;
         }
 
-        &:after {
+        & a.active::after {
             right: 0;
         }
 
-        &:hover {
-
-            &:after,
-            &:before {
-                width: 50%;
-            }
-        }
-
-        &.active:before,
-        &.active:after {
+        & a.active:before,
+        & a.active:after {
             width: 50%;
         }
     }
-
-
 
     .dropdown {
         position: relative;
         z-index: 4;
 
-        &:hover {           
+        &:hover {
             .dropdown__list {
                 opacity: 1;
                 pointer-events: all;
@@ -126,11 +142,10 @@
             color: $black-color;
             opacity: 0;
             pointer-events: none;
-            -webkit-box-shadow: 0px 3px 13px 2px rgba(0, 0, 0, 0.67);
-            box-shadow: 0px 3px 13px 2px rgba(0, 0, 0, 0.67);
+            @include btn-shadow;          
         }
 
-        &__title {           
+        &__title {
             text-align: center;
             padding: 1rem 0;
             font-size: $normal-font-size;

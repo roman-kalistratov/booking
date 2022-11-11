@@ -1,4 +1,5 @@
 @import './vars';
+@import './mixins';
 
 * {
     scroll-behavior: smooth;
@@ -102,7 +103,7 @@ p {
 
 .btn {
     all: unset;
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
     font-family: $secondary-font;
     font-size: $normal-font-size;
     border: 1px solid $light-color;
@@ -114,16 +115,16 @@ p {
 
     &:hover {
         transform: translateY(-3px);
-        -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);
-        box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);
+        @include card-shadow;
     }
 }
+
 
 input:not([type='checkbox']),
 select {
     outline: none;
     cursor: text;
-    border: 1px solid #c0c3c7;
+    border: 1px solid $light-color;
     border-radius: 0.8rem;
     padding: 1rem;
     width: 100%;
@@ -131,8 +132,8 @@ select {
 
     &:hover,
     &:focus {
-        -webkit-box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27);
-        box-shadow: 0px 0px .1px 1px rgba(0, 0, 0, 0.27);
+       @include btn-shadow;
+        
     }
 }
 
@@ -174,7 +175,7 @@ input[type="checkbox"]:disabled {
 }
 
 input[type="checkbox"]:disabled+span {
-    color: #c0c0c0;
+    color: red;
 }
 
 input[type="checkbox"]:checked {
@@ -190,3 +191,9 @@ input[type="checkbox"]:checked::before {
     right: -1px;
     top: -6px;
 }
+
+input[type='search'] {
+   min-width:200px;
+   padding: 0.6rem;
+}
+

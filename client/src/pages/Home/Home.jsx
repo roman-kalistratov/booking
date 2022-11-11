@@ -1,7 +1,14 @@
 import React from 'react';
-import { Footer, Header, Navbar, TopTours, WhyRTours, Destinations, Adventures, Subscribe,ScrollToTop } from '../../components';
-
-import './home.scss';
+import { 
+  Footer, 
+  Header, 
+  Navbar, 
+  TopTours, 
+  WhyRTours, 
+  Destinations, 
+  Adventures, 
+  Subscribe,
+  ScrollToTop } from '../../components';
 
 const Home = () => {
   return (
@@ -15,8 +22,6 @@ const Home = () => {
           <Destinations />
           <Subscribe />
           <Adventures />
-
-
         </main>
         <Footer />
       </div>

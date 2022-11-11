@@ -1,9 +1,9 @@
 import React from 'react';
 import { GrFormClose } from "react-icons/gr";
 import { images } from '../../constants';
-import './results.scss';
+import './search.scss';
 
-const Results = () => {
+const Search = () => {
     return (
         <div className='results'>
 
@@ -111,4 +111,4 @@ const Results = () => {
     )
 }
 
-export default Results
+export default Search

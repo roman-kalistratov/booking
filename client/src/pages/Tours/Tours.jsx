@@ -1,9 +1,12 @@
-import React from 'react';
-import { Footer, Navbar, Filters, ScrollToTop,Results } from '../../components';
+import { 
+  Footer, 
+  Navbar, 
+  Filters, 
+  ScrollToTop, 
+  Search } from '../../components';
+import './tours.scss';
 
-import './destinations.scss';
-
-const Destinations = () => {
+const Tours = () => {
   return (
     <>
       <Navbar />
@@ -11,15 +14,13 @@ const Destinations = () => {
       <div className="wrapper">
         <main className="main">
           <div className="main__container container">
-            <div className="main__left"><Filters /></div>
+            <div className="main__left">
+              <Filters />
+            </div>
             <div className="main__right">
-                <Results/>
-            
-
+              <Search />
             </div>
           </div>
-
-
         </main>
         <Footer />
       </div>
@@ -28,4 +29,4 @@ const Destinations = () => {
   )
 }
 
-export default Destinations
+export default Tours

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CiMoneyBill } from "react-icons/ci";
 import { GiAirBalloon, GiTrophyCup } from "react-icons/gi";
 import { BsBookmarkStar } from "react-icons/bs";
@@ -8,6 +7,7 @@ const WhyRTours = () => {
     return (
         <section className='whyRTours'>
             <h2 className='whyRTours__title'>Why book with R-tours?</h2>
+            
             <div className="whyRTours__wrapper container">
                 {
                     whyRToursData.map((item) =>

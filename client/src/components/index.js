@@ -10,7 +10,7 @@ import Adventures from './Adventures/Adventures';
 import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
-import Results from './Results/Results';
+import Search from './Search/Search';
 import DropDownNav from './DropDownNav/DropDownNav';
 import Card from '../admin/components/Card/Card';
 
@@ -28,7 +28,7 @@ export {
     Subscribe,
     Filters,
     ScrollToTop,
-    Results,
+    Search,
     DropDownNav,
     Card
   };

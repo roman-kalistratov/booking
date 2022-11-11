@@ -1,4 +1,5 @@
 @import '../../scss/vars';
+@import '../../scss/mixins';
 
 .adventures {
     text-align: center;
@@ -24,8 +25,7 @@
             &:hover,
             &.active {
                 transform: translateY(-3px);
-                -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);                
-                box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);
+                @include btn-shadow;
             }
         }
     }
@@ -77,8 +77,7 @@
                 transition: .2s ease;
 
                 &:hover {
-                    -webkit-box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);                
-                box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.67);
+                    @include btn-shadow;
                 }
             }
         }

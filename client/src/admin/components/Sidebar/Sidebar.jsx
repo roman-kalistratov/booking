@@ -1,68 +1,9 @@
-import React from 'react';
-import SidebarItem from './SidebarItem';
+import { NavLink } from "react-router-dom";
 import { images } from '../../../constants';
-import './sidebar.scss'
+import './sidebar.scss';
 
-const accountData = [
-    {
-        id: 10,
-        title: "Profile",
-        icon: images.user_white,
-        link: 'profile'
-    }
-    
-]
+const Sidebar = () => {    
 
-const userData = [
-    {
-        id: 13,
-        title: "Users",
-        icon: images.users_white,
-        link: 'users'
-    }   
-]
-const destinationsData = [
-    {
-        id: 16,
-        title: "All Destinations",
-        icon: images.note,
-        link: 'destinations'
-    },
-    {
-        id: 22,
-        title: "Add Destination",
-        icon: images.add_note,
-        link: 'new-user'
-    },
-    {
-        id: 32,
-        title: "Delete Destination",
-        icon: images.delete_note,
-        link: 'delete-user'
-    }
-]
-const toursData = [
-    {
-        id: 31,
-        title: "All Tours",
-        icon: images.note,
-        link: 'destinations'
-    },
-    {
-        id: 42,
-        title: "Add Tour",
-        icon: images.add_note,
-        link: 'new-user'
-    },
-    {
-        id: 55,
-        title: "Delete Tour",
-        icon: images.delete_note,
-        link: 'delete-user'
-    }
-]
-
-const Sidebar = () => {
     return (
         <div className='sidebar'>
             <div className="sidebar__top">
@@ -71,13 +12,54 @@ const Sidebar = () => {
             </div>
 
             <div className="sidebar__nav">
-                <SidebarItem data={accountData} title='account' />
-                <SidebarItem data={userData} title='users' />
-                <SidebarItem data={destinationsData} title='destinations' />
-                <SidebarItem data={toursData} title='Tours' />
+                {
+                    menu.map((item) => {
+                        return (
+                            <NavLink key={item.id} to={`/admin/${item.link}`} activeClassname = "active" className="sidebar__link">
+                                <img className='sidebar__icon' src={item.icon} alt="drop icon" />
+                                {item.title}
+                            </NavLink>
+                        )
+                    }
+                    )}
+
             </div>
         </div>
     )
 }
 
 export default Sidebar
+
+
+const menu = [
+    {
+        id: 16,
+        title: "Dashboard",
+        icon: images.dashboard_white,
+        link: 'dashboard'
+    },
+    {
+        id: 14,
+        title: "Profile",
+        icon: images.user_white,
+        link: 'profile'
+    },
+    {
+        id: 22,
+        title: "Users",
+        icon: images.users_white,
+        link: 'users'
+    },
+    {
+        id: 32,
+        title: "Destinations",
+        icon: images.add_note_white,
+        link: 'destinations'
+    },
+    {
+        id: 12,
+        title: "Tours",
+        icon: images.add_note_white,
+        link: 'tours'
+    }
+]

@@ -17,7 +17,6 @@ const Header = () => {
             <Link to='/' className='header-admin__link'>
                 <img src={images.log_out_white} alt="" />Logout
             </Link>
-
         </header>
     )
 }

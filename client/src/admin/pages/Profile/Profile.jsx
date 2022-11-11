@@ -1,6 +1,6 @@
-import { Container, Main, Wrapper } from '../../admin/layout';
-import { Sidebar, Header, Card,Avatar } from '../../admin/components';
-import { EditProfile, ChangePassword } from '../../admin/form';
+import { Container, Main, Wrapper } from '../../layout';
+import { Sidebar, Header, Card,Avatar } from '../../components';
+import { EditProfile, ChangePassword } from '../../form';
 
 const Profile = () => {
     return (
@@ -11,7 +11,10 @@ const Profile = () => {
                 <Wrapper>
                     <Card>
                         <Wrapper>
-                            <Avatar className = "avatar avatar-profile"/>                        
+                            <Card>
+                                <Avatar className = "avatar avatar-profile"/> 
+                            </Card>
+                                                   
 
                             <EditProfile />
                         </Wrapper>

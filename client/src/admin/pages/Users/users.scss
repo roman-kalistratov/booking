@@ -1,0 +1,100 @@
+@import '../../../scss/vars';
+
+.users {
+
+    &__filters {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: $black-color;
+        margin-bottom: 2rem;
+
+        &-item {
+            & input {
+                width: 300px;
+                padding: 0.5rem;
+            }
+
+            & select {
+                padding: 0.5rem;
+                color: inherit;
+            }
+
+            &:not(:first-child) {
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    &__list {
+        width: 100%;
+        color: $black-color;
+        border-radius: 0.8rem;
+        border: 1px solid $light-color;
+        text-align: left;
+        border-spacing: 0;
+
+        & img {
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform .3s ease-in-out;
+        }
+
+        & tr {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+
+            & div {
+                display: flex;
+                align-items:center;
+                justify-content: space-between;
+            }
+        }
+
+        & th,td {            
+            border-top: 1px solid $light-color;
+            &:last-child{
+                border-right:none;
+            }
+            padding: 0.5rem 0;
+        }
+
+        & th {
+            border-top:none;
+        }
+
+        & th,
+        td {
+            border-right: 1px solid $light-color;
+        }
+
+        & tbody tr:hover {
+            background-color: $light-hover-color;
+            .avatar {
+                transform: scale(3);
+            } 
+        }
+
+        &-actions {
+            display: flex;
+            align-items:center;
+            justify-content: space-evenly;  
+            
+            & img {
+                cursor: pointer;
+                opacity: .8;
+                transition: transform .2s ease-in-out;
+                margin-top: 4px;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+}

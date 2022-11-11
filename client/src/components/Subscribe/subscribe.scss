@@ -1,7 +1,7 @@
 @import '../../scss/vars';
 
 .subscribe {
-    background-color: rgb(20, 108, 163);
+    background-color: $blue-color;
     padding: 3rem 0;
     color:$light-color;
 
@@ -11,7 +11,7 @@
 
     &__form {
         margin-top: 1rem;
-        max-width: 30%;
+        max-width: 20%;
         margin: auto;
     }
 
@@ -19,21 +19,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 1rem;
     }
 
     &__input {
         background-color:$white-color;
         border:none;
         outline: none;
-        font-size: 2.4rem;
         border-radius: 0.4rem;
-        padding: 0.5rem 1.2rem;
-        margin: 2rem 2rem 1rem 0;
+        margin-right: 2rem;
     }
 
     & button {
         color:$white-color;
-        font-size: 2rem;
-        font-weight: 300;        
+        font-weight: 300;     
     } 
 }

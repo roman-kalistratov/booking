@@ -5,8 +5,8 @@
     height: 100%;
     overflow: hidden;
     color: $white-color;
-    background-image: linear-gradient(to bottom, #146ca3, #16618f, #19567c, #1c4c69, #1e4157);
     font-size: $normal-font-size;
+    background-image: linear-gradient(to bottom, #146ca3, #16618f, #19567c, #1c4c69, #1e4157);
 
     &__top {
         display: flex;
@@ -15,7 +15,7 @@
         justify-content:center;
         padding: 0 1rem;
         width: 100%;
-        border-bottom: 1px solid rgb(255 255 255 / .4);        
+        border-bottom: 1px solid $border-admin-color;        
     }
 
     &__logo {
@@ -35,30 +35,26 @@
     }
 
     &__link {
-        color: white;
+        color: $white-color;
         display: flex;
         justify-content: flex-start;
-        align-items: center;
-        padding: 0.5rem 0 0.5rem 2rem;
-        border-radius: 0.8rem;
-        width: 95%;
+        align-items: center;      
+        padding: 1.5rem 0 1.5rem 2rem;       
+        width: 100%;
         margin: auto;
+        border-bottom: 1px solid $border-admin-color; 
 
-        &:hover,
-        &.active {
-            -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.67);
-            box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.27);
+        &:hover {
+            background-image: radial-gradient(circle, #3484b5, #2d7eb1, #2578ac, #1d72a8, #146ca3);
         }
+    }
 
-        &:not(:first-child) {
-            margin-top: 1rem;
-        }
+    & a.active {
+        background-image: radial-gradient(circle, #3484b5, #2d7eb1, #2578ac, #1d72a8, #146ca3);
     }
 
     &__icon {
         width: 2.5rem;
         margin-right: 1rem;
     }
-
-
 }
