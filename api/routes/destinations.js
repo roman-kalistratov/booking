@@ -1,16 +1,15 @@
 import express from "express";
 import { createDestination, deleteDestination, getDestination, getDestinations, updateDestination } from "../controllers/destination.js";
-import Destination from "../models/Destination.js";
-import { createError } from "../utils/error.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 //CREATE
-router.post("/", createDestination);
+router.post("/",verifyAdmin, createDestination);
 //UPDATE
-router.put("/:id", updateDestination)
+router.put("/:id",verifyAdmin, updateDestination)
 //DELETE
-router.delete("/:id", deleteDestination)
+router.delete("/:id",verifyAdmin, deleteDestination)
 
 //GET
 router.get("/:id", getDestination)

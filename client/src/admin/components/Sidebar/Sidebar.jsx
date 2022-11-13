@@ -53,13 +53,13 @@ const menu = [
     {
         id: 32,
         title: "Destinations",
-        icon: images.add_note_white,
+        icon: images.note,
         link: 'destinations'
     },
     {
         id: 12,
         title: "Tours",
-        icon: images.add_note_white,
+        icon: images.note,
         link: 'tours'
     }
 ]
