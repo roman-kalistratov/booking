@@ -6,7 +6,6 @@ import usersRoute from "./routes/users.js";
 import destinationsRoute from "./routes/destinations.js";
 import toursRoute from "./routes/tours.js";
 import cookieParser from "cookie-parser";
-
 import cors from "cors";
 
 const app = express();
@@ -25,9 +24,10 @@ mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
 
+
 //middlewares
-app.use(cookieParser());
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);

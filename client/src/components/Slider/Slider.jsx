@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, {  useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs, Autoplay, Navigation, EffectFade } from "swiper";
 import { images } from "../../constants";
@@ -38,11 +38,13 @@ const HeaderSlider = () => {
                         </h1>
                         <h2 className="slide-subtitle">
                             {slide.category}
-                        </h2>
+                        </h2>                        
                     </SwiperSlide>
                 )}
-            </Swiper>
 
+                    
+            </Swiper>
+         
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
@@ -57,7 +59,7 @@ const HeaderSlider = () => {
                 {
                     headerSliderData.map((slide) =>
                         <SwiperSlide key={slide}>
-                            <img src={slide.img} alt="slide" />
+                            <img src={slide.img} alt="slide" />                            
                         </SwiperSlide>
                     )}
             </Swiper>
@@ -77,28 +79,28 @@ const TopToursSlider = () => {
                 //     delay: 4500,
                 //     disableOnInteraction: false,
                 // }}       
-                navigation={true}         
+                navigation={true}
                 freeMode={true}
                 spaceBetween={20}
                 slidesPerView={4}
-                modules={[Autoplay,Navigation,FreeMode]}
-                className="topToursSlider">               
+                modules={[Autoplay, Navigation, FreeMode]}
+                className="topToursSlider">
 
-                {toursSliderData.map((tour) => 
-                        
-                        <SwiperSlide key={tour.title}>
+                {toursSliderData.map((tour) =>
+
+                    <SwiperSlide key={tour.title}>
                         <div className='toursItem'>
-                        
+
                             <div className="toursItem__img" style={{ backgroundImage: `url(${tour.img})` }}></div>
                             <div className="toursItem__inner">
                                 <h2 className='toursItem__title'>{tour.title}</h2>
                                 <h4 className="toursItem__subtitle">{tour.subtitle}</h4>
-    
+
                                 <div className="toursItem__info">
                                     <h4 className='toursItem__info-days'>{tour.days}</h4>
                                     <h3 className='toursItem__info-price'>from <span>{tour.price}$</span></h3>
                                 </div>
-    
+
                                 <button className='toursItem__btn btn' type="button">View Details</button>
                             </div>
                         </div>

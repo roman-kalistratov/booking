@@ -1,112 +1,56 @@
-import React from 'react';
-import { GrFormClose } from "react-icons/gr";
-import { images } from '../../constants';
+import { useState } from 'react';
+import { DateRange } from 'react-date-range';
+import format from 'date-fns/format';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import './search.scss';
 
 const Search = () => {
+    const [open, setOpen] = useState(false)
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection'
+        }
+    ])
+
+    const handleClick = () => {
+
+    };
+
+
     return (
-        <div className='results'>
+        <div className='search'>
+            <div className="search__wrapper">
 
-            <h3 className="results__subInfo">
-                Applied filters
-                <span className='results__count'>123 results were found</span>
-            </h3>
+                <div className="search__item">
+                    <input type="text" placeholder='Destination' />
+                </div>
+                <div className="search__item">
+                    <input
+                        placeholder={`${format(range[0].startDate, "MM/dd/yyyy")} to ${format(range[0].endDate, "MM/dd/yyyy")}`}
+                        readOnly
+                        className="inputBox"
+                        onClick={() => setOpen(open => !open)}
+                    />
 
-            <div className="results__filters">
-                <div className="results__filters-item">
-                    <h4 className="results__filters-name">category</h4>
-                    <h4 className="results__filters-value">tours</h4>
-                    <div className="results__filters-removeBtn"><GrFormClose /></div>
-                </div>
-                <div className="results__filters-item">
-                    <h4 className="results__filters-name">category</h4>
-                    <h4 className="results__filters-value">tours</h4>
-                    <div className="results__filters-removeBtn"><GrFormClose /></div>
-                </div>
-                <div className="results__filters-item">
-                    <h4 className="results__filters-name">category</h4>
-                    <h4 className="results__filters-value">tours</h4>
-                    <div className="results__filters-removeBtn"><GrFormClose /></div>
+                    {open &&
+                        <DateRange
+                            onChange={item => setRange([item.selection])}
+                            editableDateInputs={true}
+                            moveRangeOnFirstSelection={false}
+                            ranges={range}
+                            months={2}
+                            direction="horizontal"
+                            className="search__calendar"
+                        />
+                    }
 
                 </div>
-                <h4 className="results__filters-clearAll">Clear All</h4>
+                <button className='search__btn btn' onClick={handleClick}>Search</button>
             </div>
 
-            <div className="results__tour">
-                <img className='results__tour-img' src={images.slide5} alt="img" />
-                <div className="results__tour-info">
-                    <h4 className="results__tour-category">Safari</h4>
-                    <h3 className="results__tour-title">5 Day Northern Tanzania Big 5 Safari</h3>
-                    <img className='results__tour-rating' src={images.five_star} alt="tour rating" />
-                    <p className="results__tour-descr">Our 5 day Tanzania safari was absolutely life changing! Great Lake Expedition didn't...</p>
-                    <h4 className="results__tour-travelAttr">Travel Style : <span>Family, Private, Partially Guided, Christmas & New Year</span></h4>
-                    <h4 className="results__tour-travelAttr">Free Cancellation available</h4>
-                </div>
-                <div className="results__tour-price">
-                    <h3 className='results__price-number'>from 149$</h3>
-                    <button className="results__price-btn btn">View Tour</button>
-                </div>
-            </div>
-            <div className="results__tour">
-                <img className='results__tour-img' src={images.slide4} alt="img" />
-                <div className="results__tour-info">
-                    <h4 className="results__tour-category">Safari</h4>
-                    <h3 className="results__tour-title">5 Day Northern Tanzania Big 5 Safari</h3>
-                    <img className='results__tour-rating' src={images.five_star} alt="tour rating" />
-                    <p className="results__tour-descr">Our 5 day Tanzania safari was absolutely life changing! Great Lake Expedition didn't...</p>
-                    <h4 className="results__tour-travelAttr">Travel Style : <span>Family, Private, Partially Guided, Christmas & New Year</span></h4>
-                    <h4 className="results__tour-travelAttr">Free Cancellation available</h4>
-                </div>
-                <div className="results__tour-price">
-                    <h3 className='results__price-number'>from 149$</h3>
-                    <button className="results__price-btn btn">View Tour</button>
-                </div>
-            </div>
-            <div className="results__tour">
-                <img className='results__tour-img' src={images.slide3} alt="img" />
-                <div className="results__tour-info">
-                    <h4 className="results__tour-category">Safari</h4>
-                    <h3 className="results__tour-title">5 Day Northern Tanzania Big 5 Safari</h3>
-                    <img className='results__tour-rating' src={images.five_star} alt="tour rating" />
-                    <p className="results__tour-descr">Our 5 day Tanzania safari was absolutely life changing! Great Lake Expedition didn't...</p>
-                    <h4 className="results__tour-travelAttr">Travel Style : <span>Family, Private, Partially Guided, Christmas & New Year</span></h4>
-                    <h4 className="results__tour-travelAttr">Free Cancellation available</h4>
-                </div>
-                <div className="results__tour-price">
-                    <h3 className='results__price-number'>from 149$</h3>
-                    <button className="results__price-btn btn">View Tour</button>
-                </div>
-            </div>
-            <div className="results__tour">
-                <img className='results__tour-img' src={images.slide2} alt="img" />
-                <div className="results__tour-info">
-                    <h4 className="results__tour-category">Safari</h4>
-                    <h3 className="results__tour-title">5 Day Northern Tanzania Big 5 Safari</h3>
-                    <img className='results__tour-rating' src={images.five_star} alt="tour rating" />
-                    <p className="results__tour-descr">Our 5 day Tanzania safari was absolutely life changing! Great Lake Expedition didn't...</p>
-                    <h4 className="results__tour-travelAttr">Travel Style : <span>Family, Private, Partially Guided, Christmas & New Year</span></h4>
-                    <h4 className="results__tour-travelAttr">Free Cancellation available</h4>
-                </div>
-                <div className="results__tour-price">
-                    <h3 className='results__price-number'>from 149$</h3>
-                    <button className="results__price-btn btn">View Tour</button>
-                </div>
-            </div>
-            <div className="results__tour">
-                <img className='results__tour-img' src={images.slide1} alt="img" />
-                <div className="results__tour-info">
-                    <h4 className="results__tour-category">Safari</h4>
-                    <h3 className="results__tour-title">5 Day Northern Tanzania Big 5 Safari</h3>
-                    <img className='results__tour-rating' src={images.five_star} alt="tour rating" />
-                    <p className="results__tour-descr">Our 5 day Tanzania safari was absolutely life changing! Great Lake Expedition didn't...</p>
-                    <h4 className="results__tour-travelAttr">Travel Style : <span>Family, Private, Partially Guided, Christmas & New Year</span></h4>
-                    <h4 className="results__tour-travelAttr">Free Cancellation available</h4>
-                </div>
-                <div className="results__tour-price">
-                    <h3 className='results__price-number'>from 149$</h3>
-                    <button className="results__price-btn btn">View Tour</button>
-                </div>
-            </div>
         </div>
     )
 }

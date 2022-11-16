@@ -1,119 +1,114 @@
 @import '../../scss/vars';
 @import '../../scss/mixins';
 
-.results {
-    padding: 1rem;
+.search {
+    position: absolute;
+    bottom: 25vh;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    padding: 1rem 4rem;
+    border-radius: 0.8rem;
+    background-color: rgb(20, 108, 163, .2);
+    backdrop-filter: blur(2px);
 
-    &__subInfo {
-        width: 100%;
+    z-index: 99999999999999999;
+
+
+    &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
-    &__count {
-        font-size: $normal-font-size;
-    }
+    &__item {
+        width: 300px;
+        position: relative;
 
-    &__filters {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 1rem;
+        & input {
+            background-color: inherit !important;
 
-        &-item {
-            margin-right: 1rem;
-            border: 1px solid $light-color;
-            border-radius: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 1.5rem;
-        }
-
-        &-name,
-        &-value {
-            margin-right: 0.2rem;
-        }
-
-        &-name:after {
-            content: ':';
-        }
-
-        &-removeBtn {
-            display: flex;
-            align-items: center;
-            padding: 0.2rem;
-            border: 1px solid $light-color;
-            border-radius: 50%;
-            justify-content: center;
-            margin-left: 0.5rem;
-            cursor: pointer;
-            opacity: .6;
-
-            &:hover {
-                opacity: 1;
+            &::placeholder {
+                color: $light-color !important;
             }
         }
 
-        &-clearAll {
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 0.8rem;
-            transition: .2s ease;
-
-            &:hover {
-                @include btn-shadow;
-            }
+        &:not(:last-child) {
+            margin-right: 5rem;
         }
     }
 
-    &__tour {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        border: 1px solid $light-color;
-        border-radius: 0.8rem;
-        padding: 1rem;
-        margin: 2rem 0;
-
-        &-img {
-            width: 25%;
-            min-height: 150px;
-            object-fit: cover;
-            border-radius: 0.8rem;
-
-        }
-
-        &-info {
-            flex-basis: 60%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            text-align: left;
-            margin-left: 1rem;
-        }
-
-        &-title {
-            font-family: $secondary-font;
-            color: $black-color;
-            margin: 0.5rem 0;
-        }
-
-        &-rating {
-            max-width: 100px;
-        }
-
-        &-descr {
-            margin: 0.5rem 0;
-        }
-
-        &-travelAttr {
-            margin: 0.3rem 0;
-            letter-spacing: .3px;
-        }
+    &__calendar {
+        position: absolute;
+        left: -50%;
+        bottom: 150%;
+        z-index: 9999;
     }
+
+    &__btn {
+        background-color: $white-color !important;
+    }
+}
+
+.rdrDateDisplayWrapper,
+.rdrCalendarWrapper {
+    background-color: rgb(20, 108, 163, .3);
+
+    border-radius: .8rem;
+    font-size: 1.3rem;
+}
+
+.rdrCalendarWrapper {
+    background-color: rgb(20, 108, 163, .8);
+    backdrop-filter: blur(12px);
+}
+
+.rdrDateInput {
+    border-radius: 0.8rem;
+
+    & input {
+        border: none !important;
+    }
+}
+
+.rdrNextPrevButton,
+.rdrPprevButton {
+    position: absolute;
+    top: 0;
+}
+
+.rdrNextPrevButton {
+    right: 0;
+}
+
+.rdrPprevButton {
+    left: 0;
+}
+
+.rdrMonthAndYearWrapper {
+    height: 0;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.rdrMonthPicker,
+.rdrYearPicker {
+    display: none;
+}
+
+.rdrMonthAndYearPickers select {
+    background-color: $white-color !important;
+}
+
+.rdrMonthName,
+.rdrWeekDay {
+    color: $light-color;
+}
+
+.rdrDayNumber span {
+    color: $white-color;
+}
+
+.rdrDayPassive span {
+    opacity: .7;
 }

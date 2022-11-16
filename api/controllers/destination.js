@@ -50,3 +50,14 @@ export const getDestinations = async (req,res,next) => {
         next(err)
     }
 }
+
+export const countTours = async (req,res,next) => {    
+    
+    try {
+        const cntTours = await Destination.aggregate([{$project: { cntTours: { $size:"$tours" }}}]);        
+            
+        res.status(200).json(cntTours)
+    } catch (err) {
+        next(err)
+    }
+}

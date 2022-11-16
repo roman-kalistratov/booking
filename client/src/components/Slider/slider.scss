@@ -103,13 +103,14 @@
         padding: 1rem;
         top: -25vh;
         background-color: $white-color;
-        
+        background-color: rgb(20, 108, 163, .2);
+        backdrop-filter: blur(2px);
     }
 
     &-thumbs .swiper-slide {
         width: 25%;
         height: 100%;
-        opacity: 0.4;
+        opacity: 0.5;
         cursor: pointer;
         border-radius: 2rem;
 
@@ -132,27 +133,29 @@
 
 /*========== Top Tours ==========*/
 .topToursSlider {
+
     & .swiper-button-prev,
     & .swiper-button-next {
-        color: $black-color !important;        
+        color: $black-color !important;
 
-        &:after {            
-            opacity:0;          
+        &:after {
+            opacity: 0;
             padding: 0.5rem 1rem;
             transition: opacity .2s ease-in-out;
             @include navigate-shadow;
         }
 
         &:hover:after {
-            opacity: 1;           
+            opacity: 1;
         }
     }
 
     &:hover {
+
         .swiper-button-prev:after,
         .swiper-button-next:after {
             opacity: 1 !important;
-             
+
         }
     }
 
@@ -175,7 +178,7 @@
     cursor: auto;
 
     &:hover {
-        @include card-shadow;      
+        @include card-shadow;
     }
 
     &__img {

@@ -3,7 +3,7 @@ import {
   Navbar, 
   Filters, 
   ScrollToTop, 
-  Search } from '../../components';
+  List } from '../../components';
 import './tours.scss';
 
 const Tours = () => {
@@ -18,7 +18,7 @@ const Tours = () => {
               <Filters />
             </div>
             <div className="main__right">
-              <Search />
+              <List />
             </div>
           </div>
         </main>

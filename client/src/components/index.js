@@ -10,9 +10,10 @@ import Adventures from './Adventures/Adventures';
 import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
-import Search from './Search/Search';
+import List from './List/List';
 import DropDownNav from './DropDownNav/DropDownNav';
 import Spinner from './Spinner/Spinner';
+import Search from './Search/Search';
 
 
 export {
@@ -28,7 +29,8 @@ export {
     Subscribe,
     Filters,
     ScrollToTop,
-    Search,
+    List,
     DropDownNav,
-    Spinner
+    Spinner,
+    Search
   };
