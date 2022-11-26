@@ -21,13 +21,8 @@ const TourSchema = new mongoose.Schema({
   },  
   rating:{
     type:String
-  },
-  start:{
-    type:Date
-  },
-  end:{
-    type:Date
   }
+  
 },{timestamps:true });
 
 export default mongoose.model("Tour", TourSchema)

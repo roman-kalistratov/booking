@@ -6,9 +6,15 @@ import './adventures.scss';
 
 const Adventures = () => {
     const [activeCategory, setActiveCategory] = useState('Art & Culture');
+    const [limit, setLimit] = useState(4);
 
-    const { data, loading, error } = reFetch(`/tours?category=${changeSymbol(activeCategory)}`);
+    const { data, loading, error } = reFetch(`/tours?category=${changeSymbol(activeCategory)}&limit=${limit}`);
    
+
+    const handleClickTab = (e) => {
+        setActiveCategory(e.target.textContent);
+        setLimit(4);
+    }
     
     return (
         <section className='adventures container'>
@@ -19,7 +25,7 @@ const Adventures = () => {
                 <ul className="adventures__btns">
                     {
                         ['Art & Culture', 'Food & Drink', 'Outdoor Activities', 'Unique Experiences', 'Seasonal & Special'].map((item) =>
-                            <li key={item} className={`adventures__btns-item ${activeCategory === item ? "active" : ""}`} onClick={(e) => setActiveCategory(e.target.textContent)}>
+                            <li key={item} className={`adventures__btns-item ${activeCategory === item ? "active" : ""}`} onClick={handleClickTab}>
                                 {item}
                             </li>
                         )}
@@ -52,7 +58,8 @@ const Adventures = () => {
                                 }
                             </ul>
                         </li>
-                    )}                   
+                    )} 
+                    <button style={{"margin":"auto"}} className='btn' type='button' onClick={() => setLimit(limit + 4)}>show more</button>                  
                 </ul>
             </div>
         </section>

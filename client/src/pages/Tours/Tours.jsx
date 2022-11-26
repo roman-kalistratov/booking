@@ -8,9 +8,8 @@ import {
   Spinner
 } from '../../components';
 import { changeSymbol } from '../../utils/changeSymbol.js';
-import reFetch from '../../hooks/useFetch';
 import { GrFormClose } from "react-icons/gr";
-import { images } from '../../constants';
+import reFetch from '../../hooks/useFetch';
 import './tours.scss';
 
 const Tours = () => {
@@ -22,12 +21,9 @@ const Tours = () => {
   const [checkedPrice, setCheckedPrice] = useState(null);
   const [checkedCategory, setCheckedCategory] = useState(null);
   const [checkedRatingValue, setCheckedRatingValue] = useState(null);
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(10);
 
   const { data, loading, error } = reFetch(`/tours?category=${changeSymbol(categoryName)}&rating=${ratingValue}&min=${min || 0}&max=${max || 999}&limit=${limit}`);
-
-
-
 
   const getFilterPrice = (e) => {
     if (e.target.checked) {
@@ -65,8 +61,6 @@ const Tours = () => {
       setCheckedRatingValue(null);
     }
   }
-
-
 
   const clearPriceFilter = () => {
     setCheckedPrice(null);

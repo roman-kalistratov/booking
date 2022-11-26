@@ -21,7 +21,7 @@ const Filters = ({ getFilterPrice, getFilteredCategory,getRatingValue, prices, c
                                     checked={item.id === parseInt(checkedPrice)}
                                     onChange={getFilterPrice}
                                 />
-                                <label htmlFor={`custom-checkbox-${item.value}`}>${item.min} {`${item.max === undefined ? "+" : "- $" + item.max}`}<span>({item.cnt})</span></label>
+                                <label htmlFor={`custom-checkbox-${item.value}`}>${item.min} {`${item.max === undefined ? "+" : "- $" + item.max}`}</label>
                             </div>
                         )
                     }
@@ -42,7 +42,7 @@ const Filters = ({ getFilterPrice, getFilteredCategory,getRatingValue, prices, c
                                     checked={item.id === parseInt(checkedCategory)}
                                     onChange={getFilteredCategory}
                                 />
-                                <label htmlFor={`custom-checkbox-${item.value}`}>{item.value}<span>({item.cnt})</span></label>
+                                <label htmlFor={`custom-checkbox-${item.value}`}>{item.value}</label>
                             </div>
                         )
                     }

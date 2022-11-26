@@ -2,7 +2,7 @@
 @import '../../scss/mixins';
 
 .list {
- 
+
 
     &__tour {
         display: flex;
@@ -44,6 +44,10 @@
 
         &-descr {
             margin: 0.5rem 0;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
         }
 
         &-travelAttr {

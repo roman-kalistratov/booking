@@ -1,10 +1,8 @@
-import React from 'react';
-import { images } from '../../constants';
-
 import './list.scss';
 
 const List = ({data,rating}) => {
 
+    // adds the correct path for the rating image relative to the item's rating
     const crntRating = (tourRaiting) => {
         const arr = rating.filter(item => item.value === tourRaiting);
         return arr[0].img
