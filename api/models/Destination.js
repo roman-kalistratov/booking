@@ -4,8 +4,8 @@ const DestinationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  photos: {
-    type: String,
+  photo: {
+    type:String,
   },
   tours: {
     type: [String],

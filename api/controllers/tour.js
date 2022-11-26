@@ -65,10 +65,30 @@ export const getTour = async (req, res, next) => {
 
 
 export const getTours = async (req, res, next) => {
+    const { min, max, category, rating, limit, ...others } = req.query;
+
     try {
-        const tours = await Tour.find();
+        let crntCategory;
+        let crntRating;
+        let crntLimit = limit || 10;
+
+        category === 'ALL'
+            ? crntCategory = ["Art & Culture", "Food & Drink", "Outdoor Activities", "Unique Experiences", "Seasonal & Special"]
+            : crntCategory = category;
+
+        rating === 'ALL' || rating === undefined
+            ? crntRating = [1, 2, 3, 4, 5]
+            : crntRating = rating;
+
+        const tours = await Tour.find({
+            ...others,
+            price: { $gt: min | 1, $lt: max || 9999 },
+            category: crntCategory,
+            rating: crntRating,
+        }).limit(crntLimit);
 
         res.status(200).json(tours)
+
     } catch (err) {
         next(err)
     }

@@ -1,6 +1,7 @@
 import React, {  useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs, Autoplay, Navigation, EffectFade } from "swiper";
+
 import { images } from "../../constants";
 
 import "swiper/css";
@@ -70,6 +71,7 @@ const HeaderSlider = () => {
 
 
 const TopToursSlider = () => {
+    
     return (
         <>
             <Swiper

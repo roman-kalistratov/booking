@@ -1,4 +1,5 @@
 import {images} from '../../constants';
+import './spinner.scss';
 
 const Spinner = () => {
   return (

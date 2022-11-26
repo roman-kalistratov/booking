@@ -13,7 +13,10 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO);
+    await mongoose.connect(process.env.MONGO, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("Connected to mongoDB.");
   } catch (error) {
     throw error;
@@ -46,7 +49,8 @@ app.use((err, req, res, next) => {
   })
 })
 
+const PORT = process.env.PORT || 8800;
 app.listen(8800, () => {
   connect();
-  console.log("Connected to backend on port 8800.");
+  console.log(`Connected to Server, Port: ${PORT}`);  
 });

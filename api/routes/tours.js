@@ -18,8 +18,10 @@ router.put("/:id", verifyAdmin, updateTour);
 router.delete("/:id/:destinationId", verifyAdmin, deleteTour);
 
 //GET
-router.get("/:id", getTour);
+router.get("/find/:id", getTour);
 //GET ALL
 router.get("/", getTours);
+
+
 
 export default router;

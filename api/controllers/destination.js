@@ -43,7 +43,7 @@ export const getDestination = async (req,res,next) => {
 
 export const getDestinations = async (req,res,next) => {
     try {
-        const destinations = await Destination.find();
+        const destinations = await Destination.find().limit(req.query.limit);
             
         res.status(200).json(destinations)
     } catch (err) {

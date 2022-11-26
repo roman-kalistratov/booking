@@ -1,1 +1,70 @@
 @import '../../scss/vars';
+@import '../../scss/mixins';
+.main__right {
+    padding: 1rem;
+
+    &__subInfo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__count {
+        font-size: $normal-font-size;
+    }
+
+    &__filters {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 1rem;
+
+        &-item {
+            margin-right: 1rem;
+            border: 1px solid $light-color;
+            border-radius: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+        }
+
+        &-name,
+        &-value {
+            margin-right: 0.2rem;
+        }
+
+        &-name:after {
+            content: ':';
+        }
+
+        &-removeBtn {
+            display: flex;
+            align-items: center;
+            padding: 0.2rem;
+            border: 1px solid $light-color;
+            border-radius: 50%;
+            justify-content: center;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            opacity: .6;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &-clearAll {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 0.8rem;
+            transition: .2s ease;
+
+            &:hover {
+                @include btn-shadow;
+            }
+        }
+    }
+}

@@ -18,8 +18,16 @@ const TourSchema = new mongoose.Schema({
   },
   photos:{
     type: [String]
+  },  
+  rating:{
+    type:String
   },
-  tourList: [{ item: String, unavailableDates: {type: [Date]}}],
+  start:{
+    type:Date
+  },
+  end:{
+    type:Date
+  }
 },{timestamps:true });
 
 export default mongoose.model("Tour", TourSchema)
