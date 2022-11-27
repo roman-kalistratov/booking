@@ -44,3 +44,15 @@ export const login = async (req, res, next) => {
         next(err)
     }
 }
+
+export const logout = async (req, res, next) => {
+    try {
+        res
+        .clearCookie("access_token")
+        .status(200)
+        .json({ ...otherDetails });
+
+    }catch (err){
+        next(err)
+    }
+}
