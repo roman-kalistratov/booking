@@ -1,5 +1,14 @@
 @import '../../scss/vars';
 @import '../../scss/mixins';
+
+
+.wrapper {
+    &__top {
+        background-color: $blue-color;
+        height: $nav-height;
+    }
+}
+
 .main__right {
     padding: 1rem;
 

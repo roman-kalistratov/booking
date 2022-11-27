@@ -1,6 +1,6 @@
 @import '../../scss/vars';
 
-.login {
+.register {
     height: 100vh;
     width: 50%;
     margin: auto;
@@ -12,12 +12,34 @@
         border: 1px solid $light-color;
         padding: 3rem;
         border-radius: 0.8rem;
-        width: 500px;
+        width: 550px;
     }
 
-    &__content {
+    &__form {
         display: flex;
         flex-direction: column;
+
+        &-wrapper{
+            display: flex;
+            width: 100%;
+
+            & label {
+
+                &:first-child {
+                    margin-right: 1rem;
+                }
+                
+                & span:first-child {
+                   margin: 0;
+                   padding: 0;
+                }
+
+                & input {
+                    flex-basis: 65%;
+                    margin: 0;
+                }
+            }
+        }
     }
 
     &__label {
@@ -31,18 +53,17 @@
         }
     }
 
-    & button.login__btn {
+    & button.register__btn {
         background-color: $blue-color;
         color: $white-color;
     }
 
-    & button.login__btn::disabled {
-        background-color: red !important;
-        cursor: not-allowed;
-    }
-
     &__input {
         flex-basis: 70%;
+    }
+
+    &__error {
+        color:#ff0000;
     }
 
     &__bottom {

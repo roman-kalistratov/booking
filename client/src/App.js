@@ -1,6 +1,6 @@
 import React from 'react';
-import { Home, Login, Tours } from './pages';
-import { Profile,Users,Destinations,ToursAdmin } from './admin/pages';
+import { Home, Login, Tours, Register } from './pages';
+import { Profile, Users, Destinations, ToursAdmin } from './admin/pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.scss';
 import { ScrollToTop } from './components';
@@ -18,7 +18,8 @@ function App() {
           <Route exact path="/admin/users" element={<Users />} />
           <Route exact path="/admin/destinations" element={<Destinations />} />
           <Route exact path="/admin/tours" element={<ToursAdmin />} />
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>

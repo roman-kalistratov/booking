@@ -92,6 +92,7 @@ const Tours = () => {
       <Navbar />
 
       <div className="wrapper">
+        <div className="wrapper__top"></div>
         <main className="main">
           <div className="main__container container">
             <div className="main__left">
@@ -158,7 +159,7 @@ const Tours = () => {
                 <Spinner />
               ) : (
                 <>
-                  <List data={data} rating = {rating} />
+                  <List data={data} rating={rating} />
                   <button className='btn' type="button" onClick={() => setLimit(limit + 4)}>show more</button>
                 </>
               )}

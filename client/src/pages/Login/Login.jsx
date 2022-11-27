@@ -33,7 +33,7 @@ const Login = () => {
 
     return (
         <div className="login">
-            <div className="login__wrrapper">
+            <div className="login__wrapper">
                 <h2 className='login__title'>Log in to Skytrip</h2>
                 <p className='login__text'>Log in to access your bookings <br /> from any device.</p>
                 <Divider />
@@ -63,12 +63,12 @@ const Login = () => {
                     <button disabled={loading} onClick={handleClick} className="login__btn btn">
                         Login
                     </button>
-                    {error && <span style={{ "color": "red" }}>{error.message}</span>}
+                    {error && <span style={{ "color": "#ff0000" }}>{error.message}</span>}
                     <Divider />
 
                     <div className="login__bottom">
                         <span>New here?</span>
-                        <Link to="/" className="btn">Create an account </Link>
+                        <Link to="/register" className="btn">Create an account </Link>
                     </div>
                 </div>
             </div>
