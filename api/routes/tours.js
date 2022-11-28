@@ -2,6 +2,8 @@ import express from "express";
 import { 
     createTour, 
     deleteTour, 
+    getByCategory, 
+    getByRating, 
     getTour, 
     getTours, 
     updateTour 
@@ -21,6 +23,9 @@ router.delete("/:id/:destinationId", verifyAdmin, deleteTour);
 router.get("/find/:id", getTour);
 //GET ALL
 router.get("/", getTours);
+router.get("/getByCategory", getByCategory);
+router.get("/getByRating", getByRating);
+
 
 
 
