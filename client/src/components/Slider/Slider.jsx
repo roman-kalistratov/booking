@@ -1,7 +1,7 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs, Autoplay, Navigation, EffectFade } from "swiper";
-
+import useFetch from '../../hooks/useFetch';
 import { images } from "../../constants";
 
 import "swiper/css";
@@ -39,13 +39,13 @@ const HeaderSlider = () => {
                         </h1>
                         <h2 className="slide-subtitle">
                             {slide.category}
-                        </h2>                        
+                        </h2>
                     </SwiperSlide>
                 )}
 
-                    
+
             </Swiper>
-         
+
             <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
@@ -60,7 +60,7 @@ const HeaderSlider = () => {
                 {
                     headerSliderData.map((slide) =>
                         <SwiperSlide key={slide}>
-                            <img src={slide.img} alt="slide" />                            
+                            <img src={slide.img} alt="slide" />
                         </SwiperSlide>
                     )}
             </Swiper>
@@ -71,7 +71,9 @@ const HeaderSlider = () => {
 
 
 const TopToursSlider = () => {
-    
+    const { data, loading, error } = useFetch(`/tours/getByRating?rating=5`);
+
+    console.log(data);
     return (
         <>
             <Swiper
@@ -88,15 +90,15 @@ const TopToursSlider = () => {
                 modules={[Autoplay, Navigation, FreeMode]}
                 className="topToursSlider">
 
-                {toursSliderData.map((tour) =>
+                {data.map((tour) =>
 
                     <SwiperSlide key={tour.title}>
                         <div className='toursItem'>
 
-                            <div className="toursItem__img" style={{ backgroundImage: `url(${tour.img})` }}></div>
+                            <div className="toursItem__img" style={{ backgroundImage: `url(/uploads/Tours/${tour.photos[0]})` }}></div>
                             <div className="toursItem__inner">
                                 <h2 className='toursItem__title'>{tour.title}</h2>
-                                <h4 className="toursItem__subtitle">{tour.subtitle}</h4>
+                                <h4 className="toursItem__subtitle">{tour.desc}</h4>
 
                                 <div className="toursItem__info">
                                     <h4 className='toursItem__info-days'>{tour.days}</h4>
@@ -119,29 +121,54 @@ export default { HeaderSlider, TopToursSlider }
 /*======= section data ======= */
 const headerSliderData = [
     {
-        title: "switzerland",
+        title: "Amsterdam",
         category: "Top Destination",
-        img: images.slide4
+        img: images.Amsterdam
     },
     {
-        title: "dubai",
+        title: "Dubai",
         category: "Top Destination",
-        img: images.slide2
+        img: images.Dubai
     },
     {
-        title: "amsterdam",
+        title: "Faro",
         category: "Top Destination",
-        img: images.slide3
+        img: images.Faro
     },
     {
-        title: "maldives",
+        title: "Florence",
         category: "Top Destination",
-        img: images.slide1
+        img: images.Florence
     },
     {
-        title: "vienna",
+        title: "Madrid",
         category: "Top Destination",
-        img: images.slide5
+        img: images.Madrid
+    },
+    {
+        title: "Maldives",
+        category: "Top Destination",
+        img: images.Maldives
+    },
+    {
+        title: "Naples",
+        category: "Top Destination",
+        img: images.Naples
+    },
+    {
+        title: "New York",
+        category: "Top Destination",
+        img: images.NewYork
+    },
+    {
+        title: "Prague",
+        category: "Top Destination",
+        img: images.Prague
+    },
+    {
+        title: "Rome",
+        category: "Top Destination",
+        img: images.Rome
     }
 ];
 

@@ -8,8 +8,7 @@ const Adventures = () => {
     const [activeCategory, setActiveCategory] = useState('Art & Culture');
     const [limit, setLimit] = useState(4);
 
-    const { data, loading, error } = useFetch(`/tours/getByCategory?category=${changeSymbol(activeCategory)}&limit=${limit}`);
-   
+    const { data, loading, error } = useFetch(`/tours/getByCategory?category=${changeSymbol(activeCategory)}&limit=${limit}`);   
 
     const handleClickTab = (e) => {
         setActiveCategory(e.target.textContent);

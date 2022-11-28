@@ -1,10 +1,15 @@
 import logo_rk from '../assets/logo-rk.png';
 import logo from '../assets/logo.png';
-import slide1 from '../assets/slide1.jpg';
-import slide2 from '../assets/slide2.jpg';
-import slide3 from '../assets/slide3.jpg';
-import slide4 from '../assets/slide4.jpg';
-import slide5 from '../assets/slide5.jpg';
+import Amsterdam from '../assets/Amsterdam.jpg';
+import Dubai from '../assets/Dubai.jpg';
+import Faro from '../assets/Faro.jpg';
+import Florence from '../assets/Florence.jpg';
+import Madrid from '../assets/Madrid.jpg';
+import Maldives from '../assets/Maldives.jpg';
+import Naples from '../assets/Naples.jpg';
+import NewYork from '../assets/NewYork.jpg';
+import Prague from '../assets/Prague.jpg';
+import Rome from '../assets/Rome.jpg';
 import edit from '../assets/edit.png';
 import edit_white from '../assets/edit-white.png';
 import log_out from '../assets/log-out.png';
@@ -30,11 +35,16 @@ import preloader from '../assets/preloader.gif';
 const images = {    
     logo_rk,
     logo,
-    slide1, 
-    slide2, 
-    slide3, 
-    slide4, 
-    slide5,   
+    Amsterdam, 
+    Dubai, 
+    Faro, 
+    Florence, 
+    Madrid,   
+    Maldives,   
+    Naples,   
+    NewYork,   
+    Prague,   
+    Rome,   
     edit,
     edit_white,
     log_out,
