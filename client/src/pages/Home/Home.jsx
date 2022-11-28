@@ -9,7 +9,6 @@ import {
   Adventures,
   Subscribe,
   ScrollToTop,
-  Spinner,
   Search
 } from '../../components';
 
@@ -17,7 +16,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
       <Header />
       <div class="wrapper">
         <main class="main">

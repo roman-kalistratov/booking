@@ -102,9 +102,10 @@
         border-radius: 2rem;
         padding: 1rem;
         top: -25vh;
-        background-color: $white-color;
-        background-color: rgb(20, 108, 163, .2);
-        backdrop-filter: blur(2px);
+        background-color:$light-color;
+        // background-color: $white-color;
+        // background-color: rgb(20, 108, 163, .2);
+        // backdrop-filter: blur(2px);
     }
 
     &-thumbs .swiper-slide {

@@ -70,12 +70,12 @@ const Register = () => {
 
                     <label className='register__label'>
                         <span>Email:</span>
-                        <input className="register__input" type="email" placeholder='Email' {...register("email")} />
+                        <input className="register__input" type="email" placeholder='email' {...register("email")} />
                     </label>
 
                     <label className='register__label'>
                         <span>Password:</span>
-                        <input className="register__input" placeholder='Password' {...register("password")} />
+                        <input className="register__input" placeholder='password' {...register("password")} />
                     </label>
 
                     <label className='register__label'>

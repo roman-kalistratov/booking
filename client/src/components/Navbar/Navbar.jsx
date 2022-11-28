@@ -45,7 +45,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar__wrapper">
                 <ul className='navbar__list'>
-                    {['home', 'tours'].map((item) =>
+                    {['home'].map((item) =>
                         <li key={item} className="navbar__item">
                             <NavLink to={`/${item}`} activeClassname="active" className="navbar__link">{item}</NavLink>
                         </li>

@@ -65,7 +65,7 @@ export const getTour = async (req, res, next) => {
 
 
 export const getTours = async (req, res, next) => {
-    const { min, max, category, rating, limit, ...others } = req.query;
+    const { destination,min, max, category, rating, limit, ...others } = req.query;
 
     try {
         let crntCategory;
@@ -80,8 +80,11 @@ export const getTours = async (req, res, next) => {
             ? crntRating = [1, 2, 3, 4, 5]
             : crntRating = rating;
 
+        const crntDestination = await Destination.find({name:destination.toLowerCase()});
+
         const tours = await Tour.find({
             ...others,
+            _id:crntDestination[0].tours,
             price: { $gt: min | 1, $lt: max || 9999 },
             category: crntCategory,
             rating: crntRating,

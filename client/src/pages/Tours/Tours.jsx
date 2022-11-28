@@ -7,12 +7,16 @@ import {
   List,
   Spinner
 } from '../../components';
+import { useLocation } from "react-router-dom";
 import { changeSymbol } from '../../utils/changeSymbol.js';
 import { GrFormClose } from "react-icons/gr";
 import reFetch from '../../hooks/useFetch';
+
 import './tours.scss';
 
 const Tours = () => {
+  const location = useLocation();
+  const [destination, setDestination] = useState(location.state.destination);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [priceName, setPriceName] = useState('');
@@ -23,7 +27,8 @@ const Tours = () => {
   const [checkedRatingValue, setCheckedRatingValue] = useState(null);
   const [limit, setLimit] = useState(10);
 
-  const { data, loading, error } = reFetch(`/tours?category=${changeSymbol(categoryName)}&rating=${ratingValue}&min=${min || 0}&max=${max || 999}&limit=${limit}`);
+  const { data, loading, error } = reFetch(`/tours?destination=${destination}&min=${min || 0}&max=${max || 999}&category=${changeSymbol(categoryName)}&rating=${ratingValue}&limit=${limit}`);
+  console.log(data);
 
   const getFilterPrice = (e) => {
     if (e.target.checked) {
@@ -159,8 +164,16 @@ const Tours = () => {
                 <Spinner />
               ) : (
                 <>
-                  <List data={data} rating={rating} />
-                  <button className='btn' type="button" onClick={() => setLimit(limit + 4)}>show more</button>
+                  {
+
+                    data.length > 0 ? (
+                      <>
+                        <List data={data} rating={rating} />
+                        {limit > 10 && <button className='btn' type="button" onClick={() => setLimit(limit + 4)}>show more</button>}
+                      </>
+                    ) : (<h3>Sorry.No results found.</h3>)
+                  }
+
                 </>
               )}
             </div>
