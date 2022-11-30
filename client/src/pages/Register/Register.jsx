@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Divider } from "../../components";
+import { Buble, Divider } from "../../components";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from "yup";
@@ -23,7 +23,7 @@ const validationSchema = Yup.object({
 
 
 const Register = () => {
-    const [ resError, serResError ] = useState(''); 
+    const [resError, serResError] = useState('');
     const { register, formState: { errors }, handleSubmit } = useForm({
         resolver: yupResolver(validationSchema)
     });
@@ -32,9 +32,9 @@ const Register = () => {
 
     const onSubmit = async (data) => {
         try {
-            const res = await axios.post("/auth/register", data);            
+            const res = await axios.post("/auth/register", data);
             res.status === 200 ? navigate("/login") : serResError("Something went wrong");
-          
+
         } catch (err) {
             serResError(err.response.data);
         }
@@ -42,8 +42,12 @@ const Register = () => {
 
     return (
         <div className="register">
+
+            <Buble className={"buble"} />
+            <Buble className={"buble big"} />
+
             <div className="register__wrapper">
-                <h2 className='register__title'>Registration</h2>
+                <h2 className='register__title'>R-trip</h2>
                 <p className='register__text'>Create an account to access your bookings from any device.</p>
                 <Divider />
                 <form className="register__form" onSubmit={handleSubmit(onSubmit)}>

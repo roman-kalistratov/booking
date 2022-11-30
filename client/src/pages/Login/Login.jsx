@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Divider } from "../../components";
+import { Buble, Divider } from "../../components";
 import "./login.scss";
 
 const Login = () => {
@@ -33,8 +33,12 @@ const Login = () => {
 
     return (
         <div className="login">
+            
+            <Buble className={"buble"}/>
+            <Buble className={"buble big"}/>          
+            
             <div className="login__wrapper">
-                <h2 className='login__title'>Log in to Skytrip</h2>
+                <h2 className='login__title'>Log in to R-trip</h2>
                 <p className='login__text'>Log in to access your bookings <br /> from any device.</p>
                 <Divider />
                 <div className="login__content" >

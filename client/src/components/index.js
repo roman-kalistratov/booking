@@ -14,6 +14,7 @@ import List from './List/List';
 import DropDownNav from './DropDownNav/DropDownNav';
 import Spinner from './Spinner/Spinner';
 import Search from './Search/Search';
+import Buble from './Buble/Buble';
 
 
 export {
@@ -32,5 +33,6 @@ export {
     List,
     DropDownNav,
     Spinner,
-    Search
+    Search,
+    Buble
   };

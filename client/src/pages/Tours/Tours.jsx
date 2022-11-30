@@ -14,7 +14,7 @@ import reFetch from '../../hooks/useFetch';
 
 import './tours.scss';
 
-const Tours = () => {
+const Tours = () => { 
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [min, setMin] = useState(undefined);
@@ -98,8 +98,9 @@ const Tours = () => {
 
       <div className="wrapper">
         <div className="wrapper__top"></div>
-        <main className="main">
+        <main className="main">        
           <div className="main__container container">
+            
             <div className="main__left">
               <Filters
                 getFilterPrice={getFilterPrice}
