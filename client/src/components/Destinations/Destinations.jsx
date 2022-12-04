@@ -1,13 +1,18 @@
-import React,{useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Divider } from '..';
-import {Spinner} from '../../components';
+import { Spinner } from '../../components';
 import useFetch from '../../hooks/useFetch';
 import './destinations.scss';
 
 
 const Destinations = () => {
   const [limit,setLimit] = useState(8);
+
   const {data, loading, error} = useFetch(`/destinations?limit=${limit}`);
+
+ 
+
+  
  
   return (
     <section className='tours container'>
@@ -16,9 +21,7 @@ const Destinations = () => {
       <Divider />
 
       <div className="tours__wrapper">
-        {loading ? (
-        <Spinner/>
-        ) : data.map((item) =>
+        {data.map((item) =>
           <div className='tours__item' key={item._id}>
             <div className="tours__item-img" style={{ backgroundImage:`url('/uploads/Destinations/${item.photo}')` }}></div>
             <div className="tours__item-info">

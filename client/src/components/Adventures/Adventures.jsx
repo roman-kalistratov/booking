@@ -23,33 +23,20 @@ const Adventures = () => {
             <div className="adventures__tabs">
                 <ul className="adventures__btns">
                     {
-                        ['Art & Culture', 'Food & Drink', 'Outdoor Activities', 'Unique Experiences', 'Seasonal & Special'].map((item) =>
-                            <li key={item} className={`adventures__btns-item ${activeCategory === item ? "active" : ""}`} onClick={handleClickTab}>
+                        ['Art & Culture', 'Food & Drink', 'Outdoor Activities', 'Unique Experiences', 'Seasonal & Special'].map((item,i) =>
+                            <li key={i} className={`adventures__btns-item ${activeCategory === item ? "active" : ""}`} onClick={handleClickTab}>
                                 {item}
                             </li>
                         )}
                 </ul>
 
                 <ul className="adventures__content">
-                    {loading ? (
-                        <li className="adventures__content-item" >
-                            <ul className="adventures__content-inner">
-                                {
-                                    data.map((item) => (
-                                        <li className='adventures__content-inner-item'>
-                                            <img className='adventures__content-img' src={`/uploads/Tours/${item.photos[0]}`} alt="img" />
-                                            {item.title}
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </li>
-                    ) : (
+                    
                         <li className="adventures__content-item active">
                             <ul className="adventures__content-inner">
                                 {
                                     data.map((item) => (
-                                        <li className='adventures__content-inner-item'>
+                                        <li key={item._id} className='adventures__content-inner-item'>
                                             <img className='adventures__content-img' src={`/uploads/Tours/${item.photos[0]}`} alt="img" />
                                             {item.title}
                                         </li>
@@ -57,7 +44,7 @@ const Adventures = () => {
                                 }
                             </ul>
                         </li>
-                    )} 
+                    
                     <button style={{"margin":"auto"}} className='btn' type='button' onClick={() => setLimit(limit + 4)}>show more</button>                  
                 </ul>
             </div>

@@ -18,8 +18,8 @@ function App() {
           <Route exact path="/admin/users" element={<Users />} />
           <Route exact path="/admin/destinations" element={<Destinations />} />
           <Route exact path="/admin/tours" element={<ToursAdmin />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -17,8 +17,8 @@ const Home = () => {
     <>
       <Navbar />
       <Header />
-      <div class="wrapper">
-        <main class="main">
+      <div className="wrapper">
+        <main className="main">
           <Search />
           <TopTours />
           <WhyRTours />

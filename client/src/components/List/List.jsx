@@ -12,7 +12,7 @@ const List = ({data,rating}) => {
         <div className='list'>
             {
                 data.map((item) => (
-                    <div className="list__tour">
+                    <div key={item._id} className="list__tour">
                         <img className='list__tour-img' src={`/uploads/Tours/${item.photos[0]}`} alt="img" />
                         <div className="list__tour-info">
                             <h4 className="list__tour-category">{item.category}</h4>

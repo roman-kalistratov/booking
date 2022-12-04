@@ -23,10 +23,10 @@ const HeaderSlider = () => {
                 effect={'fade'}
                 centeredSlides={true}
                 navigation={true}
-                // autoplay={{
-                //     delay: 5000,
-                //     disableOnInteraction: true,
-                // }}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[Autoplay, FreeMode, Navigation, EffectFade, Thumbs]}
                 className="headerSlider">
@@ -58,8 +58,8 @@ const HeaderSlider = () => {
                 className="headerSlider-thumbs">
 
                 {
-                    headerSliderData.map((slide) =>
-                        <SwiperSlide key={slide}>
+                    headerSliderData.map((slide,i) =>
+                        <SwiperSlide key={slide.title}>
                             <img src={slide.img} alt="slide" />
                         </SwiperSlide>
                     )}
@@ -72,17 +72,15 @@ const HeaderSlider = () => {
 
 const TopToursSlider = () => {
     const { data, loading, error } = useFetch(`/tours/getByRating?rating=5`);
-
-    console.log(data);
     return (
         <>
             <Swiper
-                speed={1000}
+                speed={700}
                 loop={true}
-                // autoplay={{
-                //     delay: 4500,
-                //     disableOnInteraction: false,
-                // }}       
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: true,
+                }}       
                 navigation={true}
                 freeMode={true}
                 spaceBetween={20}
@@ -121,6 +119,11 @@ export default { HeaderSlider, TopToursSlider }
 /*======= section data ======= */
 const headerSliderData = [
     {
+        title: "New York",
+        category: "Top Destination",
+        img: images.NewYork
+    },
+    {
         title: "Amsterdam",
         category: "Top Destination",
         img: images.Amsterdam
@@ -154,12 +157,7 @@ const headerSliderData = [
         title: "Naples",
         category: "Top Destination",
         img: images.Naples
-    },
-    {
-        title: "New York",
-        category: "Top Destination",
-        img: images.NewYork
-    },
+    },  
     {
         title: "Prague",
         category: "Top Destination",

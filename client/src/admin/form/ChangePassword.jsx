@@ -16,7 +16,7 @@ const ChangePassword = () => {
             <label className='form__label'>
                 New Password:
             </label>
-            <div class="form__password">
+            <div className="form__password">
                 <input type={passwordShown ? "text" : "password"}/>
                 {
                     passwordShown ? (
@@ -31,7 +31,7 @@ const ChangePassword = () => {
             <label className='form__label'>
                 Confirm Password:
             </label>
-            <div class="form__password">
+            <div className="form__password">
                 <input type={confirmPasswordShown ? "text" : "password"} required/>
                 {
                     confirmPasswordShown ? (

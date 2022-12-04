@@ -10,8 +10,8 @@ const WhyRTours = () => {
             
             <div className="whyRTours__wrapper container">
                 {
-                    whyRToursData.map((item) =>
-                        <div className="whyRTours__item">
+                    whyRToursData.map((item,i) =>
+                        <div key={item+`${i}`} className="whyRTours__item">
                             {item.icon}
                             <h3 className="whyRTours__item-title">
                                 {item.title}

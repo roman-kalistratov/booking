@@ -14,9 +14,10 @@ import reFetch from '../../hooks/useFetch';
 
 import './tours.scss';
 
-const Tours = () => { 
+const Tours = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
+  const [dates, setDates] = useState(location.state.dates);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [priceName, setPriceName] = useState('');
@@ -27,8 +28,9 @@ const Tours = () => {
   const [checkedRatingValue, setCheckedRatingValue] = useState(null);
   const [limit, setLimit] = useState(10);
 
+  console.log(dates);
+
   const { data, loading, error } = reFetch(`/tours?destination=${destination}&min=${min || 0}&max=${max || 999}&category=${changeSymbol(categoryName)}&rating=${ratingValue}&limit=${limit}`);
-  console.log(data);
 
   const getFilterPrice = (e) => {
     if (e.target.checked) {
@@ -98,9 +100,9 @@ const Tours = () => {
 
       <div className="wrapper">
         <div className="wrapper__top"></div>
-        <main className="main">        
+        <main className="main">
           <div className="main__container container">
-            
+
             <div className="main__left">
               <Filters
                 getFilterPrice={getFilterPrice}
@@ -115,8 +117,14 @@ const Tours = () => {
               />
             </div>
             <div className="main__right">
+              <h3 className="main__right__countryInfo">
+                {destination} Tours
+              </h3>
               <h3 className="main__right__subInfo">
-                Applied filters
+                {
+                  (checkedPrice || checkedCategory || checkedRatingValue) &&
+                  `Applied filters`
+                }
                 <span className='main__right__count'>{data.length} list were found</span>
               </h3>
 
@@ -159,7 +167,11 @@ const Tours = () => {
                   )
                 }
 
-                {checkedCategory || checkedPrice || checkedRatingValue ? (<h4 className="main__right__filters-clearAll" onClick={clearAllFilters}>Clear All</h4>) : (null)}
+                {
+                  checkedCategory || checkedPrice || checkedRatingValue ? (
+                    <h4 className="main__right__filters-clearAll" onClick={clearAllFilters}>Clear All</h4>
+                  ) : (null)
+                }
               </div>
               {loading ? (
                 <Spinner />

@@ -15,7 +15,7 @@ const Sidebar = () => {
                 {
                     menu.map((item) => {
                         return (
-                            <NavLink key={item.id} to={`/admin/${item.link}`} activeClassname = "active" className="sidebar__link">
+                            <NavLink key={item.id} to={`/admin/${item.link}`} activeclassname = "active" className="sidebar__link">
                                 <img className='sidebar__icon' src={item.icon} alt="drop icon" />
                                 {item.title}
                             </NavLink>

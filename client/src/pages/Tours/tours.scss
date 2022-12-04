@@ -12,6 +12,14 @@
 .main__right {
     padding: 1rem;
 
+    &__countryInfo{
+      text-align: left;
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+      color:$black-color;
+      font-size: 2.5rem;      
+    }
+
     &__subInfo {
         width: 100%;
         display: flex;

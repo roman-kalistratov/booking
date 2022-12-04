@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import axios from "axios";
 import { AuthContext } from '../../context/AuthContext';
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TfiUser } from "react-icons/tfi";
 import { images } from '../../constants';
 
@@ -45,20 +45,20 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar__wrapper">
                 <ul className='navbar__list'>
-                    {['home'].map((item) =>
-                        <li key={item} className="navbar__item">
-                            <NavLink to={`/${item}`} activeClassname="active" className="navbar__link">{item}</NavLink>
-                        </li>
-                    )}
+                   
+                    <li className="navbar__item">
+                        <Link to={`/`} activeсlassname="active" className="navbar__link">Home</Link>
+                    </li>
+                   
                 </ul>
             </div>
 
-            <NavLink to="/" className="navbar__link">
+            <Link to="/" className="navbar__link">
                 <img className='navbar__logo' src={images.logo} alt="logo" />
-            </NavLink>
+            </Link>
 
 
-            <div class="dropdown">
+            <div className="dropdown">
                 <div className='dropdown__trigger'>
                     <TfiUser className='navbar__user-icon dropbtn' />
                     <span>Account</span>
@@ -68,54 +68,54 @@ const Navbar = () => {
                     <ul className='dropdown__list'>
                         <h3 className='dropdown__title'>Hello <span>{user.firstname}</span> </h3>
                         <li className='dropdown__item'>
-                            <NavLink to="/admin/profile" className="navbar__link">
+                            <Link to="/admin/profile" className="navbar__link">
                                 <img src={images.user} alt="drop icon" />
                                 My Profile
-                            </NavLink>
+                            </Link>
 
                         </li>
                         <li className='dropdown__item'>
-                            <NavLink to="/admin/dashboard" className="navbar__link">
+                            <Link to="/admin/dashboard" className="navbar__link">
                                 <img src={images.dashboard} alt="drop icon" />
                                 Dashboard
-                            </NavLink>
+                            </Link>
 
                         </li>
                         <li className='dropdown__item'>
-                            <NavLink to="/admin/edit-profile" className="navbar__link">
+                            <Link to="/admin/edit-profile" className="navbar__link">
                                 <img src={images.edit} alt="drop icon" />
                                 Edit Profile
-                            </NavLink>
+                            </Link>
                         </li>
                         <li className='dropdown__item'>
-                            <NavLink to="/admin/settings" className="navbar__link">
+                            <Link to="/admin/settings" className="navbar__link">
                                 <img src={images.settings} alt="drop icon" />
                                 Settings
-                            </NavLink>
+                            </Link>
 
                         </li>
                         <li className='dropdown__item'>
-                            <NavLink className="navbar__link" onClick={handleLogOut}>
+                            <Link className="navbar__link" onClick={handleLogOut}>
                                 <img src={images.log_out} alt="drop icon" />
                                 Logout
-                            </NavLink>
+                            </Link>
                         </li>
                     </ul>
                 ) : (
                     <ul className='dropdown__list'>
                         <h3 className='dropdown__title'>Hello <span>User</span> </h3>
                         <li className='dropdown__item'>
-                            <NavLink to="/register" className="navbar__link">
+                            <Link to="/register" className="navbar__link">
                                 <img src={images.edit} alt="drop icon" />
                                 Sign Up
-                            </NavLink>
+                            </Link>
                         </li>
 
                         <li className='dropdown__item'>
-                            <NavLink to="/login" className="navbar__link">
+                            <Link to="/login" className="navbar__link">
                                 <img src={images.user} alt="drop icon" />
                                 Log in
-                            </NavLink>
+                            </Link>
                         </li>
 
                     </ul>

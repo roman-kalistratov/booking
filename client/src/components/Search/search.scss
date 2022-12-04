@@ -56,6 +56,15 @@
         }
     }
 
+    &__error {
+        color:red;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: $normal-font-size;
+    }
+
     &__calendar {
         position: absolute;
         left: -50%;
