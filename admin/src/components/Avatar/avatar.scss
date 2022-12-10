@@ -1,25 +1,28 @@
 @import '../../scss/vars';
+
 .avatar {
     transition: transform .3s ease-in-out;
 
-    & img {       
-        border-radius: 50%; 
+    & img {
+        border-radius: 50%;
     }
 
     &-profile {
         width: 200px;
-        height: 200px; 
+        height: 200px;
     }
 
     &-user-list {
         width: 35px;
-        margin: auto; 
-        
-        &:before{
+        margin: auto;
+
+        &:before {
             display: none;
         }
-       
-        & img { 
+
+        & img {           
+            width: 35px;
+            min-height: 35px;
             cursor: pointer;
             transition: transform .3s ease-in-out;
         }

@@ -39,7 +39,7 @@ export const register = async (req, res, next) => {
     }
 }
 
-export const login = async (req, res, next) => {
+export const login = async (req, res, next) => {  
     try {
         const user = await User.findOne({ firstname: req.body.firstname })
         if (!user) return next(createError(404, "user not found!"))
@@ -56,7 +56,7 @@ export const login = async (req, res, next) => {
                 httpOnly: true,
             })
             .status(200)
-            .json({ ...otherDetails });
+            .json({details:{...otherDetails,isAdmin}});
     } catch (err) {
         next(err)
     }
@@ -67,7 +67,7 @@ export const logout = async (req, res, next) => {
         res
             .clearCookie("access_token")
             .status(200)
-            .json({ ...otherDetails });
+            .json("logout succeeded");
 
     } catch (err) {
         next(err)

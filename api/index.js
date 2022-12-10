@@ -6,7 +6,19 @@ import usersRoute from "./routes/users.js";
 import destinationsRoute from "./routes/destinations.js";
 import toursRoute from "./routes/tours.js";
 import cookieParser from "cookie-parser";
+import multer from 'multer';
 import cors from "cors";
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, `../admin/public/uploads`)
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname)
+  },
+})
+const upload = multer({ storage: storage })
+
 
 const app = express();
 dotenv.config();
@@ -34,7 +46,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
-app.use("/api/users", usersRoute);
+app.use("/api/users",upload.single('file'), usersRoute);
 app.use("/api/destinations", destinationsRoute);
 app.use("/api/tours", toursRoute);
 

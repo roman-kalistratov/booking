@@ -21,6 +21,7 @@
 
         &-left,
         &-right {
+            margin-top: 2rem;
             width: 48%;          
         }
 
@@ -43,5 +44,20 @@
             cursor: pointer;
             opacity: .6;
         }
+    }
+
+    &__error {
+        width: 100%;
+        margin-top: 2rem;
+        color:red;
+    }
+}
+
+.updateUserForm {
+    max-width: 800px;
+    margin: auto;
+
+    & .btn {
+        margin:2rem auto;
     }
 }

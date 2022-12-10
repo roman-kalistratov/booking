@@ -2,10 +2,14 @@
 import { EditProfile, ChangePassword } from '../../form';
 import { Sidebar, Navbar, Card, Avatar } from '../../components';
 import './profile.scss';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const Profile = () => {
     const [isChangePass, setIsChangePass] = useState(false);
+    const { user } = useContext(AuthContext);
+
+    console.log(user)
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -20,8 +24,8 @@ const Profile = () => {
 
                 <Card>
                     <div className="profile__wrapper">
-                        <Avatar className="avatar avatar-profile" />
-                        <EditProfile onClick={handleClick} />
+                        <Avatar className="avatar avatar-profile" path = {user.photo}/>
+                        <EditProfile onClick={handleClick} user = {user}/>
                         {
                           isChangePass &&
                             <Card>

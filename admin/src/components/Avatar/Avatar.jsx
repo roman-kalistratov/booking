@@ -1,10 +1,10 @@
-import React from 'react';
-import { images } from '../../constants';
 import './avatar.scss';
-const Avatar = ({className}) => {
+
+const Avatar = ({path,className}) => {
+
     return (
         <div className={className}>
-            <img src={images.avatar} alt="" />
+            <img src ={`uploads/${path ? `${path}` : `avatar-1.png`} `} alt="user avatar" />
         </div>
     )
 }

@@ -1,11 +1,40 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Sidebar, Navbar, Card, Avatar } from '../../components';
+import { UpdateUser } from '../../form';
 import { images } from '../../constants';
+import useFetch from '../../hooks/useFetch';
+import axios from 'axios';
 import './users.scss';
+
 const Users = () => {
+    const location = useLocation();
+    const path = location.pathname.split("/")[1];
+    const [list, setList] = useState([]);
+    const [isEdit, setIsEdit] = useState(false);
+    const [isEditId, setIsEditId] = useState('');
+    const { data, loading, error } = useFetch(`/${path}`);
+
+    useEffect(() => {
+        setList(data);       
+    }, [data]);
+
+    const handleDelete = async (e) => {
+        try {
+            await axios.delete(`/${path}/${e.target.id}`);
+            setList(list.filter((item) => item._id !== e.target.id));
+        } catch (err) { }
+    };
+
+    const handleEdit = (e) => {
+        setIsEdit(!isEdit);
+        setIsEditId(e.target.id);
+    };
+
     return (
         <div className="users">
             <Sidebar />
-            <div className="users__container">                
+            <div className="users__container">
                 <Navbar />
                 <Card>
                     <ul className='users__filters'>
@@ -51,23 +80,34 @@ const Users = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map(user => (
+                                list.map(user => (
+                                    !user.isAdmin &&
                                     <>
                                         <tr key={user.id}>
-                                            <td><Avatar className="avatar avatar-user-list" /></td>
-                                            <td>{user.id}</td>
-                                            <td>{user.first_name}</td>
-                                            <td>{user.last_name}</td>
+                                            <td><Avatar className="avatar avatar-user-list" path = {user.photo}/></td>
+                                            <td>{user._id}</td>
+                                            <td>{user.firstname}</td>
+                                            <td>{user.lastname}</td>
                                             <td>{user.email}</td>
                                             <td>{user.phone}</td>
                                             <td>{user.city}</td>
                                             <td>{user.country}</td>
 
                                             <td className='users__list-actions'>
-                                                <img style={{ width: "25px" }} src={images.edit} alt="edit note" />
-                                                <img style={{ width: "25px" }} src={images.delete_note_red} alt="edit note" />
+                                                <img style={{ width: "25px" }} id={user._id} src={images.edit} alt="edit note" onClick={handleEdit} />
+                                                <img style={{ width: "25px" }} id={user._id} src={images.delete_note_red} alt="delete note icon" onClick={handleDelete} />
                                             </td>
                                         </tr>
+                                        {
+                                            (isEdit && isEditId === user._id) &&
+                                            <tr>
+                                                <td colspan="9">
+                                                    <Card>
+                                                        <UpdateUser user={user}/>
+                                                    </Card>
+                                                </td>
+                                            </tr>
+                                        }
                                     </>
                                 ))
                             }
@@ -82,76 +122,3 @@ const Users = () => {
 
 export default Users
 
-
-const users = [
-    {
-        id: 3536162,
-        first_name: "Axel",
-        last_name: "Brewster",
-        email: "abrewster0@army.mil",
-        phone: "413-492-8926",
-        password: "8RSdEaS",
-        city: "Trashigang",
-        country: "Bhutan"
-    },
-    {
-        id: 1115030,
-        first_name: "Liam",
-        last_name: "Kopta",
-        email: "lkopta1@aboutads.info",
-        phone: "201-939-0899",
-        password: "QIDhtI8v",
-        city: "Tsaritsyno",
-        country: "Russia"
-    },
-    {
-        id: 2786484,
-        first_name: "Even",
-        last_name: "Worsley",
-        email: "eworsley2@umich.edu",
-        phone: "522-541-1576",
-        password: "0OfNzAB3ZNn",
-        city: "Pilchowice",
-        country: "Poland"
-    },
-    {
-        id: 9928866,
-        first_name: "Jessie",
-        last_name: "Bartelet",
-        email: "jbartelet3@howstuffworks.com",
-        phone: "471-886-7764",
-        password: "xDddPu0e",
-        city: "Longwood",
-        country: "Ireland"
-    },
-    {
-        id: 4764328,
-        first_name: "Amory",
-        last_name: "Jocic",
-        email: "ajocic4@bbc.co.uk",
-        phone: "287-551-2727",
-        password: "9hgYU8",
-        city: "Shuigou",
-        country: "China"
-    },
-    {
-        id: 5078811,
-        first_name: "Aldwin",
-        last_name: "Di Bartolommeo",
-        email: "adibartolommeo5@google.fr",
-        phone: "749-864-9672",
-        password: "outhtfugBXB",
-        city: "Zhangcun",
-        country: "China"
-    },
-    {
-        id: 1907599,
-        first_name: "Ashton",
-        last_name: "Pickervance",
-        email: "apickervance6@about.me",
-        phone: "972-592-7184",
-        password: "u1dfwQ5Xc",
-        city: "Kedungsumurkrajan",
-        country: "Indonesia"
-    }
-]

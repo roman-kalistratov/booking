@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { images } from '../../constants';
+import { AuthContext } from '../../context/AuthContext';
 import './sidebar.scss';
 
 const Sidebar = () => {
+    const { user,dispatch } = useContext(AuthContext);
+
+    console.log(user);
 
     return (
         <div className='sidebar'>
@@ -16,6 +20,7 @@ const Sidebar = () => {
                 {
                     menu.map((item) => {
                         return (
+                            (user.isAdmin === item.isAdmin || item.isUser) &&
                             <NavLink key={item.id} to={`/${item.link}`} activeclassname="active" className="sidebar__link">
                                 <img className='sidebar__icon' src={item.icon} alt="drop icon" />
                                 {item.title}
@@ -36,30 +41,37 @@ const menu = [
         id: 16,
         title: "Dashboard",
         icon: images.dashboard_white,
-        link: 'dashboard'
+        link: 'dashboard',
+        isAdmin:true,
+        isUser:true
     },
     {
         id: 14,
         title: "Profile",
         icon: images.user_white,
-        link: 'profile'
+        link: 'profile',
+        isAdmin:true,
+        isUser:true
     },
     {
         id: 22,
         title: "Users",
         icon: images.people_white,
-        link: 'users'
+        link: 'users',
+        isAdmin:true
     },
     {
         id: 32,
         title: "Destinations",
         icon: images.note_white,
-        link: 'destinations'
+        link: 'destinations',
+        isAdmin:true
     },
     {
         id: 12,
         title: "Tours",
         icon: images.note_white,
-        link: 'tours'
+        link: 'tours',
+        isAdmin:true
     }
 ]
