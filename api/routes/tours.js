@@ -6,6 +6,7 @@ import {
     getByRating, 
     getTour, 
     getTours, 
+    getAllTours,
     updateTour 
 } from "../controllers/tour.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
@@ -21,7 +22,8 @@ router.delete("/:id/:destinationId", verifyAdmin, deleteTour);
 
 //GET
 router.get("/find/:id", getTour);
-//GET ALL
+router.get("/getAll", getAllTours);
+
 router.get("/", getTours);
 router.get("/getByCategory", getByCategory);
 router.get("/getByRating", getByRating);

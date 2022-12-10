@@ -1,0 +1,27 @@
+@import '../../scss/vars';
+.avatar {
+    transition: transform .3s ease-in-out;
+
+    & img {       
+        border-radius: 50%; 
+    }
+
+    &-profile {
+        width: 200px;
+        height: 200px; 
+    }
+
+    &-user-list {
+        width: 35px;
+        margin: auto; 
+        
+        &:before{
+            display: none;
+        }
+       
+        & img { 
+            cursor: pointer;
+            transition: transform .3s ease-in-out;
+        }
+    }
+}

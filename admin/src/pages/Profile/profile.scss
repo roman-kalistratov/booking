@@ -1,0 +1,23 @@
+@import '../../scss/vars';
+
+.profile {
+    display: flex;
+
+    &__container {
+        flex: 6; 
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    & .avatar {
+        margin-right: 2rem;
+    }
+
+    & .form {
+        margin-right: 2rem;
+    }
+}

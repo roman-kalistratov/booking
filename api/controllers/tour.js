@@ -96,6 +96,21 @@ export const getTours = async (req, res, next) => {
         next(err)
     }
 }
+export const getAllTours = async (req, res, next) => {
+    // try {
+    //     const crntDestination = await Destination.find();
+
+    //     const tours = await Tour.find({            
+    //         _id: crntDestination[0].tours         
+    //     });
+     
+
+    //     res.status(200).json(tours);
+
+    // } catch (err) {
+    //     next(err)
+    // }
+}
 
 export const getByCategory = async (req, res, next) => {
     try {

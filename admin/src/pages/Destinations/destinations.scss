@@ -1,0 +1,92 @@
+@import '../../scss/vars';
+
+.destinations {
+    display: flex;
+
+    &__container {
+        flex: 6;
+    }
+
+    &__list-actions {
+        display: flex;
+        align-items: center;
+
+        & li:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-self: center;
+    }
+
+    &__item {
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+        position: relative;
+        color: $white-color;
+        overflow: hidden;
+        text-transform: capitalize;
+
+        &:hover {
+            .destinations__item-title,
+            .destinations__item-subtitle,
+            .destinations__item-img {
+                transition: transform .5s ease-in-out;
+            }
+
+            .destinations__item-title {
+                transform: translateX(-100%);
+            }
+
+            .destinations__item-subtitle {
+                transform: translateX(200%);
+            }
+
+            .destinations__item-img {
+                transform: scale(1.2);
+            }
+
+            .destinations__item-info {
+                background-color: inherit;
+                backdrop-filter: none;
+            }
+        }
+
+        &-img {
+            width: 250px;
+            height: 180px;
+            border-radius: 0.8rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            transition: .3s ease-in-out;
+        }
+
+        &-info {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(1px);
+            text-align: left;
+            position: absolute;
+            bottom: 8%;
+            left: 0%;
+            padding-left: 8%;
+            padding-bottom: 1rem;
+        }
+
+        &-title {
+            font-size: calc($h2-font-size * 0.8);
+        }
+
+        &-subtitle {
+            color: $light-color;
+            font-weight: 400;
+            font-size: calc($h3-font-size * 0.7);
+            letter-spacing: 1px;
+        }
+    }
+}

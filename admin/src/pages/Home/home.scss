@@ -1,0 +1,9 @@
+@import '../../scss/vars';
+
+.home {
+    display: flex;
+
+    &__container {
+        flex: 6; 
+    }
+}

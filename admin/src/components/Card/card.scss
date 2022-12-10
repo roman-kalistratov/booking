@@ -1,0 +1,8 @@
+@import '../../scss/vars';
+
+.card {
+    border:1px solid $light-color;
+    margin: 1rem;
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
