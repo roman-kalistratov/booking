@@ -1,11 +1,13 @@
 import Home from './Home/Home';
-import Tours from './Tours/Tours';
+import List from './List/List';
 import Login from './Login/Login';
 import Register from './Register/Register';
+import Tour from './Tour/Tour';
 
 export {
     Home,
-    Tours,
+    List,
     Login,
-    Register
+    Register,
+    Tour
   };

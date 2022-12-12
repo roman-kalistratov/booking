@@ -1,9 +1,7 @@
 @import '../../scss/vars';
 @import '../../scss/mixins';
 
-.list {
-
-
+.searchItem {
     &__tour {
         display: flex;
         justify-content: space-between;
@@ -54,5 +52,9 @@
             margin: 0.3rem 0;
             letter-spacing: .3px;
         }
+    }
+
+    &__price-number {
+        margin-bottom: 2rem;
     }
 }

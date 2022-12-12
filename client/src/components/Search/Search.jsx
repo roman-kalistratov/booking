@@ -1,13 +1,12 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DateRange } from 'react-date-range';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { SearchContext } from "../../context/SearchContext";
+import { useNavigate } from 'react-router-dom';
 import format from 'date-fns/format';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import { SearchContext } from "../../context/SearchContext";
-import { useNavigate } from 'react-router-dom';
 import './search.scss';
-import { setMonth } from 'date-fns';
 
 const Search = () => {
     const [open, setOpen] = useState(false);
@@ -40,8 +39,6 @@ const Search = () => {
         }
     };
 
-    console.log(error);
-
     return (
         <div className='search'>
             <div className="search__wrapper container">
@@ -54,7 +51,6 @@ const Search = () => {
                     {error && <h3 className='search__error'>{error}</h3>}
                 </div>
                 <div className="search__item">
-
                     <input
                         placeholder={`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}
                         readOnly

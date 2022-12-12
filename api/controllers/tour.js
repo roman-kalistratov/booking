@@ -53,7 +53,8 @@ export const deleteTour = async (req, res, next) => {
         next(err)
     }
 }
-export const getTour = async (req, res, next) => {
+export const getTour = async (req, res, next) => { 
+    console.log(req.params.id)  
     try {
         const tour = await Tour.findById(req.params.id);
 

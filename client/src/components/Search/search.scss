@@ -13,8 +13,8 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        border:1px solid $light-color;
-        border-radius:0.8rem;
+        border: 1px solid $light-color;
+        border-radius: 0.8rem;
 
         &-title {
             display: flex;
@@ -57,7 +57,7 @@
     }
 
     &__error {
-        color:red;
+        color: red;
         position: absolute;
         bottom: -30px;
         left: 50%;
@@ -75,66 +75,66 @@
     &__btn {
         background-color: $white-color !important;
     }
-}
 
-.rdrDateDisplayWrapper,
-.rdrCalendarWrapper {
-    background-color: rgb(20, 108, 163, .3);
-    background-color: $blue-color;
-    border-radius: .8rem;
-    font-size: 1.3rem;
-}
-
-.rdrCalendarWrapper {
-    background-color: $blue-color;
-}
-
-.rdrDateInput {
-    border-radius: 0.8rem;
-
-    & input {
-        border: none !important;
+    .rdrDateDisplayWrapper,
+    .rdrCalendarWrapper {
+        background-color: rgb(20, 108, 163, .3);
+        background-color: $blue-color;
+        border-radius: .8rem;
+        font-size: 1.3rem;
     }
-}
 
-.rdrNextPrevButton,
-.rdrPprevButton {
-    position: absolute;
-    top: 0;
-}
+    .rdrCalendarWrapper {
+        background-color: $blue-color;
+    }
 
-.rdrNextPrevButton {
-    right: 0;
-}
+    .rdrDateInput {
+        border-radius: 0.8rem;
 
-.rdrPprevButton {
-    left: 0;
-}
+        & input {
+            border: none !important;
+        }
+    }
 
-.rdrMonthAndYearWrapper {
-    height: 0;
-    padding-top: 2rem;
-    position: relative;
-}
+    .rdrNextPrevButton,
+    .rdrPprevButton {
+        position: absolute;
+        top: 0;
+    }
 
-.rdrMonthPicker,
-.rdrYearPicker {
-    display: none;
-}
+    .rdrNextPrevButton {
+        right: 0;
+    }
 
-.rdrMonthAndYearPickers select {
-    background-color: $white-color !important;
-}
+    .rdrPprevButton {
+        left: 0;
+    }
 
-.rdrMonthName,
-.rdrWeekDay {
-    color: $light-color;
-}
+    .rdrMonthAndYearWrapper {
+        height: 0;
+        padding-top: 2rem;
+        position: relative;
+    }
 
-.rdrDayNumber span {
-    color: $white-color;
-}
+    .rdrMonthPicker,
+    .rdrYearPicker {
+        display: none;
+    }
 
-.rdrDayPassive span {
-    opacity: .7;
+    .rdrMonthAndYearPickers select {
+        background-color: $white-color !important;
+    }
+
+    .rdrMonthName,
+    .rdrWeekDay {
+        color: $light-color;
+    }
+
+    .rdrDayNumber span {
+        color: $white-color;
+    }
+
+    .rdrDayPassive span {
+        opacity: .7;
+    }
 }

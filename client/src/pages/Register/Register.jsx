@@ -110,7 +110,7 @@ const Register = () => {
                             errors.phone?.message ||
                             errors.country?.message ||
                             errors.city?.message ||
-                            resError ? resError : null
+                            resError?.message
                         }
                     </span>
 

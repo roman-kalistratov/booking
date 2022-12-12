@@ -1,0 +1,145 @@
+@import '../../scss/vars';
+@import '../../scss/mixins';
+
+.tour {
+    text-align: left;
+    padding-bottom: 5rem;
+
+    &__top {
+        background-color: $blue-color;
+        height: $nav-height;
+    }
+
+    &__title {
+        font-family: $secondary-font;       
+        color:$primary-color;
+    }
+
+    &__rating {
+        display: flex;
+        align-items:center;
+
+        & img{
+            height: 20px;
+            margin-top: 1rem;
+        }
+
+        & h3 {
+            font-size: 1.6rem;
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &__inner{
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+    }
+
+    &__slider {
+        max-width: 60%;
+        height: 400px;
+    }
+
+    &__details {
+        flex-basis: 50%;
+        height: 100%;
+        border-radius: 2rem;
+        padding: 2rem;
+        margin-left: 2rem;
+        background-color: $light-hover-color;
+        color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: flex-start;
+
+        &-price {
+            color: inherit;
+            align-self: flex-start;
+        }        
+
+        &-date {
+            color: inherit;
+            font-size: 2.4rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            align-self: flex-start;
+        }
+    }
+
+    &__desc {        
+        letter-spacing: 0.1rem;
+    }
+
+    &__date {
+        position: relative;
+        width: 100%;
+
+        & input::placeholder {
+            padding-left: 3rem;
+        }
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0.5rem;
+            font-size: 3rem;
+            color: $light-color;
+        }
+    }
+
+    &__calendar {
+        margin-top: 1rem;
+    }
+
+    .rdrDateDisplayWrapper,
+    .rdrCalendarWrapper {
+        background-color: rgb(20, 108, 163, .3);
+        background-color: $blue-color;
+        border-radius: .8rem;
+        font-size: 1.4rem;
+    }
+
+    .rdrMonthAndYearPickers select {
+        background-color: $white-color !important;
+    }
+
+    .rdrMonthName,
+    .rdrWeekDay {
+        color: $light-color;
+    }
+
+    .rdrDayNumber span {
+        color: $white-color;
+    }
+
+    .rdrDayPassive span {
+        opacity: .7;
+    }
+
+    &__total {
+        width: 100%;
+        &-price {
+            text-align: right;
+            color:$primary-color;
+        }
+    }
+
+
+    &__btn {
+        width: 80% !important;
+        margin:2rem auto;
+        text-align: center !important;
+
+        &-book {
+            background-color:$blue-color !important;
+            color:$white-color !important;
+        }
+    }
+
+
+
+}

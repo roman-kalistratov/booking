@@ -4,7 +4,7 @@ import {
   Navbar,
   Filters,
   ScrollToTop,
-  List,
+  SearchItem,
   Spinner
 } from '../../components';
 import { useLocation } from "react-router-dom";
@@ -12,7 +12,7 @@ import { changeSymbol } from '../../utils/changeSymbol.js';
 import { GrFormClose } from "react-icons/gr";
 import reFetch from '../../hooks/useFetch';
 
-import './tours.scss';
+import './list.scss';
 
 const Tours = () => {
   const location = useLocation();
@@ -27,8 +27,6 @@ const Tours = () => {
   const [checkedCategory, setCheckedCategory] = useState(null);
   const [checkedRatingValue, setCheckedRatingValue] = useState(null);
   const [limit, setLimit] = useState(10);
-
-  console.log(dates);
 
   const { data, loading, error } = reFetch(`/tours?destination=${destination}&min=${min || 0}&max=${max || 999}&category=${changeSymbol(categoryName)}&rating=${ratingValue}&limit=${limit}`);
 
@@ -178,10 +176,9 @@ const Tours = () => {
               ) : (
                 <>
                   {
-
                     data.length > 0 ? (
                       <>
-                        <List data={data} rating={rating} />
+                        <SearchItem data={data} rating={rating} />
                         {limit > 10 && <button className='btn' type="button" onClick={() => setLimit(limit + 4)}>show more</button>}
                       </>
                     ) : (<h3>Sorry.No results found.</h3>)

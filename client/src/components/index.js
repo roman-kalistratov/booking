@@ -10,7 +10,7 @@ import Adventures from './Adventures/Adventures';
 import Subscribe from './Subscribe/Subscribe';
 import Filters from './Filters/Filters';
 import ScrollToTop from './ScrollToTop/ScrollToTop';
-import List from './List/List';
+import SearchItem from './SearchItem/SearchItem';
 import DropDownNav from './DropDownNav/DropDownNav';
 import Spinner from './Spinner/Spinner';
 import Search from './Search/Search';
@@ -30,7 +30,7 @@ export {
     Subscribe,
     Filters,
     ScrollToTop,
-    List,
+    SearchItem,
     DropDownNav,
     Spinner,
     Search,

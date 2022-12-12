@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Thumbs, Autoplay, Navigation, EffectFade } from "swiper";
-import useFetch from '../../hooks/useFetch';
+import { Link } from 'react-router-dom';
 import { images } from "../../constants";
+import useFetch from '../../hooks/useFetch';
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -71,7 +72,7 @@ const HeaderSlider = () => {
 
 
 const TopToursSlider = () => {
-    const { data, loading, error } = useFetch(`/tours/getByRating?rating=5`);
+    const { data } = useFetch(`/tours/getByRating?rating=5`);
     return (
         <>
             <Swiper
@@ -89,7 +90,6 @@ const TopToursSlider = () => {
                 className="topToursSlider">
 
                 {data.map((tour) =>
-
                     <SwiperSlide key={tour.title}>
                         <div className='toursItem'>
 
@@ -103,7 +103,7 @@ const TopToursSlider = () => {
                                     <h3 className='toursItem__info-price'>from <span>{tour.price}$</span></h3>
                                 </div>
 
-                                <button className='toursItem__btn btn' type="button">View Details</button>
+                                <Link to={`/tours/${tour._id}`} className='toursItem__btn btn'>View Details</Link>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -113,8 +113,61 @@ const TopToursSlider = () => {
     )
 }
 
+const TourSlider = ({photos}) => {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-export default { HeaderSlider, TopToursSlider }
+    return (
+        <>
+            <Swiper
+                speed={700}
+                loop={true}
+                effect={'fade'}
+                centeredSlides={true}
+                navigation={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[Autoplay, FreeMode, Navigation, EffectFade, Thumbs]}
+                className="tourSlider">
+
+                {photos.map((item) =>
+                    <SwiperSlide key={item}>
+                        <img src={`/uploads/Tours/${item}`} alt={`slide-img-${item}`} />                        
+                    </SwiperSlide>
+                )}
+
+
+            </Swiper>
+
+            <Swiper
+                onSwiper={setThumbsSwiper}
+                loop={true}
+                speed={700}
+                spaceBetween={10}
+                slidesPerView={4}
+                freeMode={true}
+                watchSlidesProgress={true}       
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="tourSlider-thumbs">
+
+                {
+                    photos.map((item) =>
+                        <SwiperSlide key={item}>
+                            <img src={`/uploads/Tours/${item}`} alt="item" />
+                        </SwiperSlide>
+                    )}
+            </Swiper>
+        </>
+    )
+}
+
+export default { 
+    HeaderSlider, 
+    TopToursSlider, 
+    TourSlider 
+}
 
 /*======= section data ======= */
 const headerSliderData = [
@@ -169,48 +222,3 @@ const headerSliderData = [
         img: images.Rome
     }
 ];
-
-const toursSliderData = [
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    },
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    },
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    },
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    },
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    },
-    {
-        img: images.slide4,
-        title: "Madrid",
-        subtitle: "A ticket to experience the best of one or two Disney® theme parks in Paris",
-        days: "7 DAYS 6 NIGHTS",
-        price: "100"
-    }
-]
