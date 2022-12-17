@@ -21,6 +21,9 @@ const TourSchema = new mongoose.Schema({
   },  
   rating:{
     type:String
+  },
+  unavailableDates: {
+    type: [Date]
   }
   
 },{timestamps:true });

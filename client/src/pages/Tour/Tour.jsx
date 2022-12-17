@@ -3,12 +3,12 @@ import { Divider, Footer, Navbar, Slider } from '../../components';
 import { Calendar } from 'react-date-range';
 import { GoCalendar } from 'react-icons/go';
 import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
+import format from 'date-fns/format';
+import axios from "axios";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
-import format from 'date-fns/format';
 import './tour.scss';
 
 const Tour = () => {
@@ -17,6 +17,7 @@ const Tour = () => {
     const [open, setOpen] = useState(false);
     const [date, setDate] = useState(new Date());
     const { data, loading, error } = useFetch(`/tours/find/${id}`);
+
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -25,10 +26,32 @@ const Tour = () => {
         return arr[0].img
     }
 
-    const handleClick = () => {
+    const unavailableDates = () => {
+        let unDates = [];
+        if (data.unavailableDates) {
+            data.unavailableDates.forEach(item => {
+                unDates.push(new Date(item));
+            })
+        }
+
+        return unDates;
+    }
+
+    const handleClick = async () => {        
         if (user) {
-            //   setOpenModal(true);
-        } else {
+            const orderData = {
+                title: data.title,
+                userID: user._id,
+                tourID: data._id,
+                totalPrice: data.price
+            }
+            try {
+                const res = await axios.post(`/orders/${date}`, orderData);
+                navigate("/thankYouPage");
+            } catch (err) {
+                console.log(err)
+            }
+        } else {         
             navigate("/login");
         }
     };
@@ -91,19 +114,22 @@ const Tour = () => {
                                                     months={1}
                                                     date={date}
                                                     className="tour__calendar"
-                                                    disabledDates = {[new Date()]}
+                                                    disabledDates={unavailableDates()}
                                                 />
                                                 <span className='search__item-close' onClick={() => setOpen(!open)}>x</span>
                                             </>
                                         }
-                                        <button className='tour__btn btn' type='button'>Search</button>
+
                                         <Divider />
+
                                         <p className='tour__desc'>{data.desc}</p>
+
                                         <Divider />
+
                                         <div className="tour__total">
                                             <h3 className="tour__total-price">total: ${data.price}</h3>
                                         </div>
-                                        <button className='tour__btn-book btn' type='button' onClick={handleClick}>Book now</button>
+                                        <button className='tour__btn-book btn' type='button' onClick={handleClick}>Book now</button>                                   
                                     </div>
                                 </div>
                             </div>

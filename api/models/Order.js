@@ -12,11 +12,7 @@ const OrderSchema = new mongoose.Schema({
   },
   totalPrice: {
     type: Number
-  },
-  dateTour: {
-    type: String,
-    required: true,
-  },  
+  } 
 },{timestamps:true });
 
 export default mongoose.model("Order", OrderSchema)

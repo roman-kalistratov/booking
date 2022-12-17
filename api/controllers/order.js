@@ -1,23 +1,31 @@
 import Order from "../models/Order.js";
+import Tour from "../models/Tour.js";
 
 
 export const createOrder = async (req, res, next) => {
-    const newOrder = new Order(req.body);
+    const newOrder= new Order(req.body);
 
-    try {
+    try {        
         const savedOrder = await newOrder.save();
-        res.status(200).json(savedOrder)
+        try {
+            await Tour.findByIdAndUpdate(req.body.tourID, {
+                $push: { unavailableDates: req.params.dateTour },
+            });
+        } catch (err) {
+            next(err);
+        }
+        res.status(200).json(savedOrder);
     } catch (err) {
         next(err);
     }
 }
 
 
-export const updateOrder = async (req,res,next) => {
+export const updateOrder = async (req, res, next) => {
     try {
         const updatedOrder = await Order.findByIdAndUpdate(
-            req.params.id, 
-            { $set: req.body }, 
+            req.params.id,
+            { $set: req.body },
             { new: true });
 
         res.status(200).json(updatedOrder)
@@ -25,30 +33,30 @@ export const updateOrder = async (req,res,next) => {
         next(err)
     }
 }
-export const deleteOrder = async (req,res,next) => {
+export const deleteOrder = async (req, res, next) => {
     try {
         await Order.findByIdAndDelete(req.params.id);
-            
+
         res.status(200).json("Order has been deleted.")
     } catch (err) {
         next(err)
     }
 }
 
-export const getOrder = async (req,res,next) => {
+export const getOrder = async (req, res, next) => {
     try {
         const order = await Order.findById(req.params.id);
-            
+
         res.status(200).json(order)
     } catch (err) {
-       next(err)
+        next(err)
     }
 }
 
-export const getOrders = async (req,res,next) => {
+export const getOrders = async (req, res, next) => {
     try {
-        const orders = await Order.find().limit(req.query.limit);
-            
+        const orders = await Order.find();
+
         res.status(200).json(orders)
     } catch (err) {
         next(err)
