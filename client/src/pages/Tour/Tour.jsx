@@ -89,7 +89,9 @@ const Tour = () => {
                                                     editableDateInputs={false}
                                                     direction="horizontal"
                                                     months={1}
+                                                    date={date}
                                                     className="tour__calendar"
+                                                    disabledDates = {[new Date()]}
                                                 />
                                                 <span className='search__item-close' onClick={() => setOpen(!open)}>x</span>
                                             </>

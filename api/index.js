@@ -5,6 +5,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import destinationsRoute from "./routes/destinations.js";
 import toursRoute from "./routes/tours.js";
+import ordersRoute from "./routes/orders.js";
 import cookieParser from "cookie-parser";
 import multer from 'multer';
 import cors from "cors";
@@ -49,6 +50,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users",upload.single('file'), usersRoute);
 app.use("/api/destinations", destinationsRoute);
 app.use("/api/tours", toursRoute);
+app.use("/api/orders", ordersRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500

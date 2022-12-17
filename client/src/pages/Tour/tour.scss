@@ -96,8 +96,7 @@
     }
 
     .rdrDateDisplayWrapper,
-    .rdrCalendarWrapper {
-        background-color: rgb(20, 108, 163, .3);
+    .rdrCalendarWrapper {       
         background-color: $blue-color;
         border-radius: .8rem;
         font-size: 1.4rem;
@@ -116,8 +115,17 @@
         color: $white-color;
     }
 
+    .rdrDayDisabled {
+        background-color:rgba(21, 66, 95, 0.3);
+        border-radius:0.8rem;
+    }
+
     .rdrDayPassive span {
         opacity: .7;
+    }
+
+    .rdrDaySelected {
+        background-color:red;
     }
 
     &__total {
