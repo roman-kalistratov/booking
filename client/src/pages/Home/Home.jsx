@@ -3,14 +3,17 @@ import {
   Footer,
   Header,
   Navbar,
-  TopTours,
-  WhyRTours,
-  Destinations,
-  Adventures,
-  Subscribe,
   ScrollToTop,
   Search
 } from '../../components';
+
+import {
+  TopTours,
+  WhyRTours,
+  Destinations,
+  Subscribe,
+  Adventures
+} from '../../sections';
 
 const Home = () => {
   return (

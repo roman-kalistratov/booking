@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
-import { Divider } from '../../components';
+import { Divider, Spinner } from '../../components';
 import { changeSymbol } from '../../utils/changeSymbol.js';
 import './adventures.scss';
 import { Link } from 'react-router-dom';
@@ -31,25 +31,28 @@ const Adventures = () => {
                         )}
                 </ul>
 
-                <ul className="adventures__content">
+                {
+                    loading ? (
+                        <Spinner />
+                    ) : (
+                        <ul className="adventures__content">
+                            <li className="adventures__content-item active">
+                                <ul className="adventures__content-inner">
+                                    {
+                                        data.map((item) => (
+                                            <Link to={`/tours/${item._id}`} className='adventures__content-inner-item'>
+                                                <img className='adventures__content-img' src={`/uploads/Tours/${item.photos[0]}`} alt="img" />
+                                                {item.title}
+                                            </Link>
+                                        ))
+                                    }
+                                </ul>
+                            </li>
 
-                    <li className="adventures__content-item active">
-                        <ul className="adventures__content-inner">
-                            {
-                                data.map((item) => (
-                                    <Link to={`/tours/${item._id}`} className='adventures__content-inner-item'>
-                                        <img className='adventures__content-img' src={`/uploads/Tours/${item.photos[0]}`} alt="img" />
-                                        {item.title}
-                                    </Link>
-                                ))
-                            }
+                            <button style={{ "margin": "auto" }} className='btn' type='button' onClick={() => setLimit(limit + 4)}>show more</button>
                         </ul>
-                    </li>
-
-
-
-                    <button style={{ "margin": "auto" }} className='btn' type='button' onClick={() => setLimit(limit + 4)}>show more</button>
-                </ul>
+                    )
+                }
             </div>
         </section>
     )

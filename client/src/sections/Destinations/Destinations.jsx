@@ -1,6 +1,5 @@
-import {useEffect, useState} from 'react';
-import { Divider } from '..';
-import { Spinner } from '../../components';
+import {useState} from 'react';
+import { Divider } from '../../components';
 import useFetch from '../../hooks/useFetch';
 import './destinations.scss';
 
@@ -9,10 +8,6 @@ const Destinations = () => {
   const [limit,setLimit] = useState(8);
 
   const {data, loading, error} = useFetch(`/destinations?limit=${limit}`);
-
- 
-
-  
  
   return (
     <section className='tours container'>
