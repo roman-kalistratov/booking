@@ -3,11 +3,12 @@
 
 .tour {
     text-align: left;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
 
     &__top {
         background-color: $blue-color;
         height: $nav-height;
+        margin-bottom: 5rem;
     }
 
     &__title {
@@ -73,7 +74,8 @@
         letter-spacing: 0.1rem;
     }
 
-    &__date {
+    &__date,
+    &__adults {
         position: relative;
         width: 100%;
 
@@ -88,6 +90,15 @@
             left: 0.5rem;
             font-size: 3rem;
             color: $light-color;
+        }
+    }
+
+    &__adults {
+        margin-top: 1rem;
+
+        & select {
+            padding-left: 4rem;
+            color:$primary-color;
         }
     }
 
@@ -136,7 +147,6 @@
         }
     }
 
-
     &__btn {
         width: 80% !important;
         margin:2rem auto;
@@ -147,7 +157,4 @@
             color:$white-color !important;
         }
     }
-
-
-
 }

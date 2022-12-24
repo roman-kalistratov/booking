@@ -1,0 +1,97 @@
+@import '../../scss/vars';
+
+.thankYou {
+    &__top {
+        background-color: $blue-color;
+        height: $nav-height;
+    }
+
+    &__wrapper {
+        display: flex;
+        min-height: 70vh;
+    }
+
+    &__inner {
+        margin: auto;
+        min-width: 800px;
+    }
+
+    &__title {
+        border: 4px dashed green;
+        padding: 2rem 4rem;
+    }
+
+    &__order {
+        margin-top: 4rem;
+
+        & table {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        & th,
+        & td {
+            width: 20%;
+            text-align: center;
+        }
+
+        & td:last-child {
+            font-size: 2rem;
+        }
+    }
+
+    &__details {
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-img {
+            width: 100px;
+            border-radius: 0.8rem;
+            flex-basis: 10%;
+        }
+
+        &-tour {
+            flex-basis: 40%;
+            text-align: left;
+            color: $primary-color;
+        }
+
+        &-cnt {
+            text-align: left;
+            flex-basis: 5%;
+        }
+
+        &-adults {
+            flex-basis: 15%;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            justify-content: center;
+
+            & svg {
+                margin-right: 1rem;
+            }
+        }
+
+        &-date {
+            flex-basis: 20%;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            justify-content: center;
+
+            & svg {
+                margin-right: 1rem;
+            }
+        }
+
+        &-price {
+            flex-basis: 5%;
+            text-align: left;
+            color:$primary-color;
+        }
+    }
+}

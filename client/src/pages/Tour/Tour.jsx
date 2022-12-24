@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { Divider, Footer, Navbar, Slider } from '../../components';
 import { Calendar } from 'react-date-range';
 import { GoCalendar } from 'react-icons/go';
+import { AiOutlineUser } from 'react-icons/ai';
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
@@ -16,6 +17,7 @@ const Tour = () => {
     const id = location.pathname.split("/")[2];
     const [open, setOpen] = useState(false);
     const [date, setDate] = useState(new Date());
+    const [adults, setAdults] = useState(1);
     const { data, loading, error } = useFetch(`/tours/find/${id}`);
 
     const { user } = useContext(AuthContext);
@@ -37,7 +39,7 @@ const Tour = () => {
         return unDates;
     }
 
-    const handleClick = async () => {        
+    const handleClick = async () => {
         if (user) {
             const orderData = {
                 title: data.title,
@@ -47,11 +49,17 @@ const Tour = () => {
             }
             try {
                 const res = await axios.post(`/orders/${date}`, orderData);
-                navigate("/thankYouPage");
+                if (res) {
+                    let orderId = res.data._id;
+
+                    console.log(res.data._id);
+                    navigate("/thankYouPage", { state: { data, date, adults, orderId } });
+                }
+
             } catch (err) {
                 console.log(err)
             }
-        } else {         
+        } else {
             navigate("/login");
         }
     };
@@ -91,7 +99,7 @@ const Tour = () => {
 
                                     <div className="tour__details">
                                         <h3 className='tour__details-price'>from {data.price}$</h3>
-                                        <h3 className='tour__details-date'>Select Date and Travelers</h3>
+                                        <h3 className='tour__details-date'>Select Date and Adults</h3>
 
                                         <div className="tour__date">
                                             <input
@@ -120,6 +128,20 @@ const Tour = () => {
                                             </>
                                         }
 
+                                        <div className='tour__adults'>
+                                            <select onChange={(e) => setAdults(e.target.value)}>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+
+                                            <div className="tour__adults-icon">
+                                                <AiOutlineUser />
+                                            </div>
+                                            
+                                        </div>
+
                                         <Divider />
 
                                         <p className='tour__desc'>{data.desc}</p>
@@ -129,7 +151,7 @@ const Tour = () => {
                                         <div className="tour__total">
                                             <h3 className="tour__total-price">total: ${data.price}</h3>
                                         </div>
-                                        <button className='tour__btn-book btn' type='button' onClick={handleClick}>Book now</button>                                   
+                                        <button className='tour__btn-book btn' type='button' onClick={handleClick}>Book now</button>
                                     </div>
                                 </div>
                             </div>
