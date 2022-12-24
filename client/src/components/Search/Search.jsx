@@ -21,11 +21,9 @@ const Search = () => {
     ])
 
     const navigate = useNavigate();
-
     const { dispatch } = useContext(SearchContext);
 
     const handleDestination = (e) => {
-
         setDestination(e.target.value);
         setError('');
     }
@@ -34,8 +32,8 @@ const Search = () => {
         if (destination) {
             dispatch({ type: "NEW_SEARCH", payload: { destination, dates } });
             navigate("/tours", { state: { destination, dates } });
-        } else {           
-            setError("Enter destination");
+        } else {
+            setError("please select a destination");
         }
     };
 
@@ -46,9 +44,16 @@ const Search = () => {
                     <AiOutlineSearch />
                     <h3>Where are you going?</h3>
                 </div>
-                <div className="search__item">
-                    <input type="text" placeholder='Destination' onChange={handleDestination} />
-                    {error && <h3 className='search__error'>{error}</h3>}
+                <div className="search__item">                   
+                    <select className='search__select' onChange={handleDestination}>
+                        <option value="none" selected disabled hidden>Destination</option>
+                        {
+                            destinationsData.map((item) => (
+                                <option value={item}>{item}</option>
+                            ))
+                        }
+                    </select>
+                    {error.length > 0 && <h3 className='search__error'>{error}</h3>}
                 </div>
                 <div className="search__item">
                     <input
@@ -82,3 +87,17 @@ const Search = () => {
 }
 
 export default Search
+
+
+const destinationsData = [
+    'Dubai', 
+    'Amsterdam', 
+    'Naples', 
+    'Maldives', 
+    'Faro', 
+    'Florence', 
+    'Rome', 
+    'Madrid', 
+    'Prague', 
+    'New York'
+];

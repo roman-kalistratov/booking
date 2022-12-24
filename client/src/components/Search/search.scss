@@ -56,12 +56,22 @@
         }
     }
 
+    &__select {       
+        color:#636c72;
+
+        & option {
+            color:$primary-color;
+        }
+    }
+
     &__error {
+        width: 100%;
         color: red;
         position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
+        background-color:$white-color;
+        border-radius:0.8rem;
+        padding: 0.2rem 0.5rem;
+        bottom: -35px;     
         font-size: $normal-font-size;
     }
 
