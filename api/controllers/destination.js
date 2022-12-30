@@ -42,7 +42,7 @@ export const getDestination = async (req,res,next) => {
 }
 
 export const getDestinations = async (req,res,next) => {
-    try {
+    try {       
         const destinations = await Destination.find().limit(req.query.limit);
             
         res.status(200).json(destinations)

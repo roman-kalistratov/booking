@@ -47,8 +47,7 @@ const Navbar = () => {
                 <ul className='navbar__list'>                   
                     <li className="navbar__item">
                         <Link to={`/`} activeсlassname="active" className="navbar__link">Home</Link>
-                    </li>
-                   
+                    </li>                   
                 </ul>
             </div>
 

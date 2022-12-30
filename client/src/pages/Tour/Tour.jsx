@@ -149,7 +149,7 @@ const Tour = () => {
                                         <Divider />
 
                                         <div className="tour__total">
-                                            <h3 className="tour__total-price">total: ${data.price}</h3>
+                                            <h3 className="tour__total-price">total: ${data.price * adults}</h3>
                                         </div>
                                         <button className='tour__btn-book btn' type='button' onClick={handleClick}>Book now</button>
                                     </div>

@@ -18,8 +18,8 @@ const Adventures = () => {
 
     return (
         <section className='adventures container'>
-            <h2 className='whyRTours__title'>Adventures All Around The World</h2>
-            <h3 className='whyRTours__subtitle'>Discover unforgettable travel experiences</h3>
+            <h2 className='adventures__title'>Adventures <br/> All Around The World</h2>
+            <h3 className='adventures__subtitle'>Discover unforgettable travel experiences</h3>
             <Divider />
             <div className="adventures__tabs">
                 <ul className="adventures__btns">
@@ -30,8 +30,6 @@ const Adventures = () => {
                             </li>
                         )}
                 </ul>
-
-
 
                 <ul className="adventures__content">
                     <li className="adventures__content-item active">

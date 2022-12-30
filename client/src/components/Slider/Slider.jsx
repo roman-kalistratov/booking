@@ -26,11 +26,12 @@ const HeaderSlider = () => {
                 navigation={true}
                 autoplay={{
                     delay: 5000,
-                    disableOnInteraction: true,
+                    disableOnInteraction: false,
                 }}
-                thumbs={{ swiper: thumbsSwiper }}
+                thumbs={{ swiper: thumbsSwiper }}                
                 modules={[Autoplay, FreeMode, Navigation, EffectFade, Thumbs]}
-                className="headerSlider">
+                className="headerSlider"                
+                >
 
                 {headerSliderData.map((slide) =>
                     <SwiperSlide key={slide.title}>
@@ -55,8 +56,20 @@ const HeaderSlider = () => {
                 slidesPerView={5}
                 freeMode={true}
                 watchSlidesProgress={true}
+                breakpoints={{                    
+                    768: {
+                      slidesPerView: 3,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                    1200: {
+                      slidesPerView: 5,
+                    }                   
+                  }}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="headerSlider-thumbs">
+                    
 
                 {
                     headerSliderData.map((slide,i) =>
@@ -80,12 +93,28 @@ const TopToursSlider = () => {
                 loop={true}
                 autoplay={{
                     delay: 3000,
-                    disableOnInteraction: true,
+                    disableOnInteraction: false,
                 }}       
                 navigation={true}
-                freeMode={true}
+                freeMode={false}
                 spaceBetween={20}
                 slidesPerView={4}
+                breakpoints={{                    
+                    318: {
+                      slidesPerView: 1,
+                      navigation:false
+                    },
+                    480: {
+                      slidesPerView: 2,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                    },
+                   
+                  }}
                 modules={[Autoplay, Navigation, FreeMode]}
                 className="topToursSlider">
 

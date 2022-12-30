@@ -15,7 +15,7 @@ const Subscribe = () => {
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
-      reset({ email: ''});
+      reset({ email: '' });
     }
   }, [formState, reset]);
 
@@ -28,13 +28,15 @@ const Subscribe = () => {
       <h2 className='subscribe__title'>Save time, save money!</h2>
       <h3 className='subscribe__subtitle'>Sign up and we'll send the best deals to you</h3>
 
-      <form className='subscribe__form' onSubmit={handleSubmit(onSubmit)}>
-        <label className='subscribe__label'>        
-          <input className='subscribe__input' type="email" placeholder=' Your email' {...register("email")} />
-          <button className='subscribe__submit btn'>Subscribe</button>
-        </label>
-        <span className='subscribe__error'>{errors.email?.message}</span>
-      </form>
+      <div className="container">
+        <form className='subscribe__form' onSubmit={handleSubmit(onSubmit)}>
+          <label className='subscribe__label'>
+            <input className='subscribe__input' type="email" placeholder=' Your email' {...register("email")} />
+            <button className='subscribe__submit btn'>Subscribe</button>
+          </label>
+          <span className='subscribe__error'>{errors.email?.message}</span>
+        </form>
+      </div>
     </div>
   )
 }

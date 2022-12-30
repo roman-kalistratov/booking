@@ -63,7 +63,6 @@ const Search = () => {
                         onClick={() => setOpen(open => !open)}
                     />
 
-
                     {open &&
                         <>
                             <DateRange

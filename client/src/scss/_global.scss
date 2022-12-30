@@ -132,8 +132,8 @@ select {
 
     &:hover,
     &:focus {
-       @include btn-shadow;
-        
+        @include btn-shadow;
+
     }
 }
 
@@ -193,7 +193,25 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type='search'] {
-   min-width:200px;
-   padding: 0.6rem;
+    min-width: 200px;
+    padding: 0.6rem;
 }
 
+
+@media screen and (max-width: 768px) {
+    .container {        
+        margin: 1rem auto;
+    }
+
+    h1 {
+        font-size: $h1-mobile-font-size;
+    }
+
+    h2 {
+        font-size: $h2-mobile-font-size;
+    }
+
+    h3 {
+        font-size: $h3-mobile-font-size;
+    }
+}

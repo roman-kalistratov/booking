@@ -7,10 +7,10 @@
     padding: 2rem 0 3rem 0;
 
     &__wrapper {
-        margin-top: 4rem;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__item {
@@ -37,5 +37,39 @@
             color: $light-color;
         }
     }
+
+    @media screen and (max-width:1024px) {  
+        & {
+            padding: 2rem 0 1rem 0; 
+        }
+        &__item {    
+            flex-basis: 50%;
+            margin-bottom: 2rem;
+            &-text {
+                max-width: 60%;
+            }
+               
+           
+        }
+      }
+
+    @media screen and (max-width: 768px) {   
+        & {
+            padding: 2rem 0 1rem 0; 
+        }
+        &__wrapper {
+            justify-content: center;
+            align-items:center;
+            flex-direction: column;
+        }     
+        &__item {    
+            &:first-child {
+                margin-top: 1rem;
+            }     
+            &-text {
+                max-width: 80%;
+            }             
+        }
+      }
 
 }

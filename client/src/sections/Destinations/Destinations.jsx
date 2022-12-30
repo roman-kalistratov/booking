@@ -5,8 +5,7 @@ import './destinations.scss';
 
 
 const Destinations = () => {
-  const [limit,setLimit] = useState(8);
-
+  const [limit,setLimit] = useState(8);  
   const {data, loading, error} = useFetch(`/destinations?limit=${limit}`);
  
   return (
@@ -26,7 +25,7 @@ const Destinations = () => {
           </div>
         )}
       </div>
-
+      
       <button type='bottom' className='tours__btn btn' onClick={() => setLimit(limit + 4)}>show more</button>
     </section>
   )

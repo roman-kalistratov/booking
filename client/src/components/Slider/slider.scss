@@ -56,7 +56,7 @@
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;         
+            object-fit: cover;
         }
 
 
@@ -125,12 +125,48 @@
     &-thumbs .swiper-slide-thumb-active {
         opacity: 1;
     }
+
+    @media screen and (max-width: 888px) {
+        &-thumbs {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .swiper {
+            &-button-next,
+            &-button-prev {          
+                display: none;               
+            }
+
+            &-slide {
+                & .slide-title { 
+                    margin-top: $nav-height;
+                    &:before,
+                    &:after {
+                        content: '';
+                        width: 30%;
+                        height: 0.5px;                        
+                    }
+        
+                    &:before {
+                        left: -35%;
+                    }
+        
+                    &:after {
+                        right: -30%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
 
 /*========== Top Tours ==========*/
 .topToursSlider {
+
     & .swiper-button-prev,
     & .swiper-button-next {
         color: $black-color !important;
@@ -162,6 +198,13 @@
 
     & .swiper-button-next {
         right: 2%;
+    }
+
+    @media screen and (max-width: 768px) {
+        & .swiper-button-prev,
+        & .swiper-button-next {
+            display: none;
+        }
     }
 }
 
@@ -196,7 +239,7 @@
     &__title {
         font-size: 2rem;
         margin-top: 0.5rem;
-        color: $black-color;
+        color: $black-color;        
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 1;
@@ -224,7 +267,7 @@
     }
 
     
-    
+
 }
 
 
@@ -233,14 +276,14 @@
 .tourSlider {
     height: 100%;
     width: 100%;
-    border-radius:20px;
+    border-radius: 20px;
 
     &-thumbs {
         width: 100%;
         height: 150px;
         border-radius: 2rem;
         padding: 1rem;
-        cursor: pointer;       
+        cursor: pointer;
     }
 
     &-thumbs .swiper-slide {

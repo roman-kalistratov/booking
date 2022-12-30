@@ -5,7 +5,7 @@
 
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         align-self: center;
     }
@@ -67,6 +67,7 @@
 
         &-title {
             font-size: calc($h2-font-size * 0.8);
+            text-transform: capitalize;
         }
 
         &-subtitle {
@@ -77,5 +78,49 @@
         }
     }
 
+    @media screen and (max-width: 768px) {
+        &__text {
+            max-width: 70%;
+            margin: auto;
+        }
 
+        &__wrapper {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            flex-wrap: nowrap;
+            justify-content: normal;
+        }
+
+        &__item {
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            scroll-behavior: smooth;
+            margin-right: 2rem;
+            margin-bottom: 0;
+
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &-img {
+                width: 40vw;
+                height: 30vw;
+            }
+        }
+
+        &__btn {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width:590px) {
+        &__item {
+            &-img {
+                width: 80vw;
+                height: 60vw;
+            }
+
+        }
+    }
 }

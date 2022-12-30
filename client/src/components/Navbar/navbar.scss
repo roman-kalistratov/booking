@@ -60,7 +60,7 @@
 
         &:before,
         &:after {
-            content: '';            
+            content: '';
             bottom: -30%;
             width: 0;
             height: 1px;
@@ -72,6 +72,7 @@
         &:before {
             right: 0;
         }
+
         &:after {
             left: 0;
         }
@@ -80,11 +81,12 @@
             &:before {
                 width: 50%;
             }
+
             &:after {
                 width: 50%;
             }
         }
-          
+
         & a.active:before,
         & a.active:after {
             content: '';
@@ -134,7 +136,7 @@
         &__list {
             position: absolute;
             top: 7rem;
-            left: -2rem;
+            left: -10rem;
             background-color: $white-color;
             border-radius: 0.8rem;
             padding: 1rem 2rem;
@@ -142,7 +144,7 @@
             color: $black-color;
             opacity: 0;
             pointer-events: none;
-            @include btn-shadow;          
+            @include btn-shadow;
         }
 
         &__title {
@@ -187,8 +189,6 @@
         }
     }
 
-
-
     &.sticky {
         height: calc($nav-height * 0.8);
         background-color: rgba(0, 0, 0, 0.4);
@@ -197,6 +197,38 @@
             max-width: 70px;
             padding: 0.5rem;
             margin-top: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        & {
+            &__logo {
+                max-width: 70px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        & {
+            justify-content: space-between;
+            padding: 0 1rem;
+
+            &__list {
+                margin-left: 5rem;
+            }
+
+            &__logo {
+                left: 27px;
+                top: 0;
+                max-width: 50px;
+            }
+        }
+
+        &.sticky {
+            .navbar__logo {
+                max-width: 40px;
+                top:4px;
+            }
         }
     }
 }

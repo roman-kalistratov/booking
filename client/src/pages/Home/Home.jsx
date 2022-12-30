@@ -22,9 +22,9 @@ const Home = () => {
       <Header />
       <div className="wrapper">
         <main className="main">
-          <Search />
-          <TopTours />
-          <WhyRTours />
+           <Search />
+         <TopTours />
+           <WhyRTours />
           <Destinations />
           <Subscribe />
           <Adventures />

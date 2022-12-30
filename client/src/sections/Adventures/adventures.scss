@@ -6,12 +6,12 @@
 
     &__btns {
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         align-items: center;
 
         &-item {
             border: 1px solid $light-color;
-            padding: 0.1rem 1rem;
+            padding: 0.8rem 1.5rem;
             cursor: pointer;
             transition: .2s ease-in-out;
             font-size: calc($h3-font-size * 0.8);
@@ -56,7 +56,7 @@
         }
 
         & a {
-            color:inherit;
+            color: inherit;
         }
 
         &-inner {
@@ -64,7 +64,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             overflow-y: hidden;
-            
+
 
             &-item {
                 font-family: $primary-font;
@@ -94,6 +94,49 @@
             object-fit: cover;
             margin-right: 2rem;
             border-radius: 0.8rem;
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+        &__content {
+            &-inner-item {
+                flex-basis: 48%;
+            }
+        }
+    }
+
+    @media screen and (max-width:920px) {
+        &__btns {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory; 
+
+            &-item {                  
+                justify-content: normal;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                margin-top: 0.5rem;
+               
+            }
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        &__content {
+            &-inner-item {
+                flex-basis: 100%;
+            }
+
+            &-img {               
+                margin-right: 1rem;
+            }
+        }
+    }
+    @media screen and (max-width:420px) {      
+        &__content {
+            &-inner-item {
+                flex-basis: 100%;
+            }
         }
     }
 }

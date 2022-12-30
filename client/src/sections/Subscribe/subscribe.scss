@@ -2,8 +2,8 @@
 
 .subscribe {
     background-color: $blue-color;
-    padding: 3rem 0;
-    color:$light-color;
+    padding: 1rem 0;
+    color:$white-color;
 
     &__subtitle {
         color:$light-color;
@@ -11,7 +11,7 @@
 
     &__form {
         margin-top: 1rem;
-        max-width: 20%;
+        max-width: 50%;
         margin: auto;
     }
 
@@ -34,4 +34,41 @@
         color:$white-color;
         font-weight: 300;     
     } 
+
+    @media screen and (max-width:1200px) {
+        &__form {
+            max-width: 60%;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        & {
+            padding: 1rem 0 0.3rem 0;
+        }
+        &__label {
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+
+        &__form {
+            max-width: 70%;
+            margin: 0 auto;
+        }
+
+        &__input {
+            margin: 1rem 0;
+        }
+       
+    }
+
+    @media screen and (max-width:540px) {
+        &__subtitle {
+            max-width: 60%;
+            margin: auto;
+        }
+        &__form {
+            max-width: 80%;
+        }
+    }
 }
