@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import "./register.scss";
 
 const validationSchema = Yup.object({
-    firstname: Yup.string().required('Firs tname is required').min(4),
+    firstname: Yup.string().required('First name is required').min(4),
     lastname: Yup.string(),
     email: Yup.string().email('Invalid email format').required('email is required'),
     password: Yup.string().min(6).required('password is Required'),
@@ -42,7 +42,6 @@ const Register = () => {
 
     return (
         <div className="register">
-
             <Buble className={"buble"} />
             <Buble className={"buble big"} />
 
@@ -51,9 +50,8 @@ const Register = () => {
                 <p className='register__text'>Create an account to access your bookings from any device.</p>
                 <Divider />
                 <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
-
                     <div className="register__form-wrapper">
-                        <label className='register__label label-half'>
+                        <label className='register__label'>
                             <span>First Name:</span>
                             <input
                                 placeholder='your name'
@@ -62,7 +60,7 @@ const Register = () => {
                             />
                         </label>
 
-                        <label className='register__label label-half'>
+                        <label className='register__label'>
                             <span>Last Name:</span>
                             <input
                                 placeholder='your lastname'
@@ -93,12 +91,12 @@ const Register = () => {
                     </label>
                     <label className='register__label'>
                         <span>Country:</span>
-                        <input className="register__input" placeholder='enter the country where you live' {...register("country")} />
+                        <input className="register__input" placeholder='enter the country' {...register("country")} />
                     </label>
 
                     <label className='register__label'>
                         <span>City:</span>
-                        <input className="register__input" placeholder='enter the city where you live' {...register("city")} />
+                        <input className="register__input" placeholder='enter the city' {...register("city")} />
                     </label>
 
                     <span className='register__error'>

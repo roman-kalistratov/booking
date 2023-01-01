@@ -1,7 +1,7 @@
 @import '../../scss/vars';
 
 .register {
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -28,7 +28,6 @@
             width: 100%;
 
             & label {
-
                 &:first-child {
                     margin-right: 1rem;
                 }
@@ -73,6 +72,48 @@
     &__bottom {
         & span {
             margin-right: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__wrapper {
+            margin: 0 1rem;
+        }
+
+        &__form {         
+            &-wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        &__label {
+            justify-content: space-between;
+            width: 100%;
+            
+            & span{
+                text-align: left;
+                flex-basis: 35%;
+            }
+
+            & label {
+                flex-basis: 65%;
+            }
+        }
+
+        &__input {
+            flex-basis: 70%;
+
+            &::placeholder {
+                font-size: 1.3rem;
+            }
+        }
+
+        &__bottom {
+            font-size: 1.4rem;
+            a {
+                font-size: inherit;
+            }
         }
     }
 }

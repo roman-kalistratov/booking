@@ -68,8 +68,7 @@ const HeaderSlider = () => {
                     }                   
                   }}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className="headerSlider-thumbs">
-                    
+                className="headerSlider-thumbs">                    
 
                 {
                     headerSliderData.map((slide,i) =>

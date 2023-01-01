@@ -55,4 +55,17 @@
             margin-right: 2rem;
         }
     }
+
+    @media screen and (max-width: 768px) {
+        &__wrapper {
+            margin: 0 1rem;
+        }
+
+        &__bottom {
+            font-size: 1.4rem;
+            a {
+                font-size: inherit;
+            }
+        }
+    }
 }
